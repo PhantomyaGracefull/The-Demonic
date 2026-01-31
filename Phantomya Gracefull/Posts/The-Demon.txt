@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Phantomya Gracefull</title>
+  <style>
+    /* --- Schriftart einbinden --- */
+    @font-face {
+      font-family: 'Doto';
+      src: url('fonts/Doto.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* --- Allgemeines Layout --- */
+    body {
+      font-family: Arial, sans-serif; /* normale Schrift für Rest der Seite */
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #869696; /* Mitternachtsblau */
+      color: #e0e0e0; /* heller Text für Kontrast */
+    }
+
+    header, footer {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    nav a {
+      color: #66ccff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+      margin: 10px 0;
+    }
+
+    footer {
+      font-size: 0.9em;
+      border-top: 1px solid #333;
+      padding-top: 10px;
+    }
+
+    /* --- Doto nur für bestimmte Überschriften --- */
+    .doto-title {
+      font-family: 'Doto', Arial, sans-serif;
+      font-size: 3em;
+      color: #f5f5f5;
+    }
+
+    .doto-subtitle {
+      font-family: 'Doto', Arial, sans-serif;
+      font-size: 2em;
+      color: #ccccff;
+      text-align: center; /* Text zentrieren*/	
+    }
+/* Header zentrieren */
+.header-container {
+  display: flex;
+  flex-direction: column; /* Überschrift oben, Bild darunter */
+  align-items: center; /* horizontale Zentrierung */
+  text-align: center; /* Text zentrieren */
+  margin-bottom: 20px;
+}
+
+.header-image {
+  width: 250px; /* Größe des Bildes */
+  height: auto;
+  margin-top: 10px; /* Abstand zwischen Überschrift und Bild */
+  border-radius: 10px; /* optional */
+}
+
+/* Tagebuch-Einträge als Boxen */
+.entry {
+  background-color: #1c1c3a; /* dunkles Blau für Kontrast zum Haupt-Hintergrund */
+  border: 2px solid #66ccff; /* sichtbare Linie als Grenze */
+  border-radius: 10px; /* leicht abgerundet */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* optionaler Schatten für Tiefe */
+  text-align: center; /* Text zentrieren */
+
+}
+
+/* Standardgröße für alle Bilder in Tagebuch-Boxen */
+.entry img {
+  width: 200px;      /* Standardbreite */
+  height: auto;      /* proportional skalieren */
+  border-radius: 10px;
+  display: block;
+  margin: 10px auto; /* zentriert */
+}
+
+/* Optional: für einzelne Bilder eine andere Größe */
+.entry img.large {
+  width: 300px;      /* größere Variante */
+}
+.entry img.small {
+  width: 250px;      /* kleinere Variante */
+}
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+   <div class="header-container">
+      <h1 class="doto-title">Phantomya Gracefull</h1>
+      <img src="Bilder\Phantomia.png.png" alt="Phantomya Gracefull" class="header-image">
+    </div>
+    </nav>
+  </header>
+
+ <main>
+  <div class="entry">
+    <h2 class="doto-subtitle">001 – </h2>
+    <h2>Die Phantomtochter - Eine stille Form der Gewalt</h2>
+    <p>Eine Phantomtochter ist nicht real. Sie existiert in der Vorstellung ihres Vaters.</p>
+    <p>Ihre eigenen Gedanken stören.</p>
+    <p>Ihre Grenzen verletzen.</p>
+    <p>Inre Autonomie ist Verrat.</p>
+<p></p>
+    <p>Das ist keine Liebe, das ist psychische Kontrolle.</p>
+    <p>Was verschwindet, wenn du Projektionsfläche bist?</p>
+    <img src="Bilder\PhantomyaIII.png" alt="Platzhalter-Bild" class="small">
+  </div>
+
+  <div class="entry">
+    <h2 class="doto-subtitle">002 – Zweiter Eintrag</h2>
+    <p>Ein weiterer Eintrag im Tagebuch...</p>
+  </div>
+</main>
+
+  <footer>
+    <p>&copy; 2026 Phantomya Gracefull</p>
+  </footer>
+</body>
+</html>
