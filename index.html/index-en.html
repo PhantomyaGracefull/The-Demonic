@@ -148,6 +148,52 @@
   text-decoration: underline;
 }
 
+/* Oberes Details */
+details.entry {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #0b1a2a; /* Mitternachtsblau */
+  border: 2px solid #1f3b57;
+}
+
+/* Summary für Datum */
+summary.doto-date {
+  font-family: 'Doto', monospace;
+  font-size: 1.2em;
+  color: #e0e6eb;
+  cursor: pointer;
+}
+
+/* Untergeordnete Details */
+details.sub-entry {
+  font-family: 'Doto', monospace;
+  margin: 10px 0 0 20px; /* eingerückt */
+  padding: 10px;
+  background-color: #1c1c3a; /* leicht dunkler als parent */
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+details.sub-entry summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #c0c8d0;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+
+.doto-date {
+  font-family: 'Doto', monospace; /* deine Schrift */
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
 
   </style>
 </head>
@@ -163,17 +209,33 @@
 
   <nav class="entry-nav">
     <strong>Entrys:</strong>
-    <a href="#entry-2026-01-31">31.01.2026</a> |
-    <a href="#entry-2026-02-01">01.02.2026</a> |
-    <a href="#entry-2026-02-02">02.02.2026</a> |
-    <a href="#entry-2026-02-03">03.02.2026</a>
-  </nav>
+    <a href="#entry-2026-01-31-001">31.01.2026</a> |
+    <a href="#entry-2026-02-01-002">01.02.2026</a> |
+    <a href="#entry-2026-02-02-003">02.02.2026</a> |
+    <a href="#entry-2026-02-03-004">03.02.2026</a> |
+    <a href="#entry-2026-02-04-005">04.02.2026</a> |
+  </nav
+
+
 
  <main>
-  <div class="entry">
-    <h2 class="doto-subtitle">000 – 00 </h2>
-    <h2>The Phantomic daughter</h2>
-    <p>A phantomic daughter is not real. She exists only in the imagination of her father.</p>
+  
+ <details id="entry-000-00" class="entry">
+  <!-- Datum als klickbarer Deckel -->
+  <summary class="doto-date">000-00 The Phantom Daughter</summary>
+
+ <details class="sub-entry">
+      <summary>The Phantom</summary>
+
+
+ <!-- Inhalt unter dem Datum -->
+  <div class="entry-content">
+    <!-- 23:26 -->
+    <p class="entry-meta">
+      <span class="time">The Phantom</span>
+    </p>
+
+    <p>A Phantom Daughter is not real. She exists only in the imagination of her father.</p>
     <p>Her own thoughts disturb.</p>
     <p>Her bounderies are violated.</p>
     <p>Her autonomy is considered betrajal.</p>
@@ -181,12 +243,28 @@
     <p>This is not love, this is psychological control.</p>
     <p>What disappears when you are a projection?</p>
     <img src="Bilder\PhantomyaIII.png" alt="Platzhalter-Bild" class="small">
+ </div>
     <a href="#top" class="back-to-top">↑</a>
-  </div>
+  </details>
+   </details>
 
- <div class="entry">
-    <h2 class="doto-subtitle">000 – 01 </h2>
-    <h2>A Quiet Form of Violence</h2>
+
+   <details id="entry-000-01" class="entry">
+  <!-- Datum als klickbarer Deckel -->
+  <summary class="doto-date">000-01 A Quiet form of violence.</summary>
+
+ <details class="sub-entry">
+      <summary></summary>
+
+
+ <!-- Inhalt unter dem Datum -->
+  <div class="entry-content">
+    <!-- 23:26 -->
+    <p class="entry-meta">
+      <span class="time">A Quiet Form of Violence</span>
+    </p>
+
+
     <p>It always felt like being on the outside rather than on the inside.Many challenges, but in truth very few helpful guidelines
        to counter externally imposed tasks with adequate approaches to solutions,</p>
      <p>  in order to make the best possible outcome of the situation.</p>
@@ -213,11 +291,26 @@
 
       <p>One could also say: family members as camouflage before the world, shielding a deeply disturbing personal worldview and profound social     	incompetence.</p>
    <a href="#top" class="back-to-top">↑</a>
-  </div>
+  </details>
+   </details>
 
 
-  <div id="entry-2026-01-31" class="entry">
-    <h2 class="doto-subtitle">001 – First Entry 31.01.2026</h2>
+  <details id="entry-2026-01-31-001" class="entry">
+  <!-- Datum als klickbarer Deckel -->
+  <summary class="doto-date">31.01.2026</summary>
+
+ <details class="sub-entry">
+      <summary>POV</summary>
+
+
+ <!-- Inhalt unter dem Datum -->
+  <div class="entry-content">
+    <!-- 23:26 -->
+    <p class="entry-meta">
+      <span class="time">POV</span>
+    </p>
+
+
     <p>I am moving further and further away from what I believed for a long time - or rather, from what I was made to believe - that he was my father.</p>
     <p>Over the years in which it became clear to me that something was wrong, this feeling has grown stronger rather than weaker is troubling.</p> 
 <p>He has such a strange intrusive manner, unlike anything I would normally describe as a father. It feels more like a person who believes they have a right to control the views and
@@ -227,11 +320,45 @@ ways of the lifes of their famely members</p>
 <p>I must wait. There is nothing else I can do at the moment.</p>
 <p>We will see what happens tomorrow. But if I allow myself to trust my feelings - which I absolutely should - then because of him.</p>
 <p>I am in nothing but the greatest danger.</p>
-   <a href="#top" class="back-to-top">↑</a>          
-  </div>
+ </details>
 
-   <div id="entry-2026-02-01" class="entry">
-    <h2 class="doto-subtitle">002 – Second Entry 01.02.2026</h2>
+ <details class="sub-entry">
+      <summary>Phantomya Video</summary>
+
+
+ <!-- Inhalt unter dem Datum -->
+  <div class="entry-content">
+    <!-- 23:26 -->
+    <p class="entry-meta">
+      <span class="time">Phantomya Modul Directory</span>
+    </p>
+
+ <video controls width="1000" style="display:block; margin: 0 auto;">
+  <source src="videos/PhantomyaModulDirectory.mp4" type="video/mp4">
+  Dein Browser unterstützt dieses Video nicht.
+</video>
+ </details>
+
+
+   <a href="#top" class="back-to-top">↑</a>          
+  </details>
+  </details>
+
+     <details id="entry-2026-02-01-002" class="entry">
+   <summary class="doto-date">
+     01.02.2026-002
+    </summary>
+
+ <details class="sub-entry">
+      <summary>POV 13:39</summary>
+
+  
+ <div class="entry-content">
+   <p class="entry-meta">
+   <span class="time">13:29</span>
+     </p> 
+
+
     <p>The indirect and direct provocations and physical assaults are increasing again. A month has passed.</p>
     <p>One month since New Year’s Eve 2025, on which he senselessly vented all of his frustration and sadism on me.</p>
 
@@ -253,23 +380,53 @@ ways of the lifes of their famely members</p>
 
      <p>He is becoming more and more dangerous to me. As he has throughout my entire life, he has made it his goal to destroy me.</p>
 
-     <p>Abortion was still illegal in 1972.So he chooses this path instead.</p> 
+     <p>Abortion was still illegal in 1972.So he chooses this path instead.</p>
+  </div>
+     </details>
 
-  <p><span class="time">18:51</span></p>
+<details class="sub-entry">
+      <summary>POV 21:59</summary>
+
+  
+ <div class="entry-content">
+   <p class="entry-meta">
+   <span class="time">21:59</span>
+     </p> 
+
   <p>The situation is becoming increasingly oppressive. I basically have no enemies, but somehow this man seems unaware of his tone and   actions. I prefer isolation. What does “Abschottung” mean? Critical distance.</p> 
      
  <img src="Bilder\Phana.png." alt="Platzhalter-Bild" class="small">
+     </div>
    <a href="#top" class="back-to-top">↑</a>
-</div>
+</details>
+ </details>
 
+<details id="entry - video" class="entry">
+ <summary class="doto-date">
+  Video
+  </summary>
 <video controls width="800" style="display:block; margin: 0 auto;">
   <source src="videos/Pham.mp4" type="video/mp4">
   Dein Browser unterstützt dieses Video nicht.
    <a href="#top" class="back-to-top">↑</a>
 </video>
+</details>
 
-   <div id="entry-2026-02-02" class="entry">
-    <h2 class="doto-subtitle">003 – Third Entry 02.02.2026</h2>
+
+   <details id="entry-2026-02-02-003" class="entry">
+   <summary class="doto-date">
+     02.02.2026-002
+    </summary>
+
+ <details class="sub-entry">
+      <summary>POV 20:45</summary>
+
+  
+ <div class="entry-content">
+   <p class="entry-meta">
+   <span class="time">Fear</span>
+     </p> 
+
     <p>The situation is becoming increasingly unsettling. Apparently, the man can no longer ignore anyone and has to shout around pointlessly.
 
 I don’t see what business he has with me. He should just sign the rental agreement, in the hope that we can finally get out of this parent/child nonsense and communicate like adults based on a contractual rental relationship. Advantage for everyone involved: there are clear rules. Fortunately, there is then not much left of parent/child dynamics. Otherwise, it seems impossible to deal with this creepy man.
@@ -279,13 +436,30 @@ It will probably do me good as well. Clear structures. On the basis of two adult
 Then he can no longer make pointless orders to me that have no legal basis. Like… the heating is too expensive. Or the shower… Why? You even get compensation for it through the rent. Or do you think you can tell your tenant how much or how little they should shower, or how to use the heating?
 
 As I said, the man is not exactly sane. And it feels like he is getting sicker and sicker in the head.</p>
+</div>
   <a href="#top" class="back-to-top">↑</a>
- </div>
+ </details>
+   </details>
 
-  <div id="entry-2026-02-03" class="entry">
-    <p class="entry-meta"><strong>Datum:</strong> 03.02.2026</p>
+   
 
-   <h2 class="doto-subtitle">004 - Fourth Entry 03.02.2026</h2>
+  <details id="entry-2026-02-03-004" class="entry">
+  <!-- Datum als klickbarer Deckel -->
+  <summary class="doto-date">03.02.2026 – 004</summary>
+
+ <details class="sub-entry">
+      <summary>How to prevent an unpredictable, defective elment from repeatedly destabilizing my system?</summary>
+    
+  <!-- Inhalt unter dem Datum -->
+  <div class="entry-content">
+    <!-- 14:04 -->
+    <p class="entry-meta">
+      <span class="time">14:04</span>
+    </p>
+
+
+    
+
    <p>“How do I prevent an unpredictable, defective element from repeatedly destabilizing my system?”</p>
 
    <p>Short and precise—sums up her situation perfectly:</p>
@@ -318,9 +492,21 @@ As I said, the man is not exactly sane. And it feels like he is getting sicker a
        <p>Continue normal system operation = everything else proceeds as planned, no energy wasted</p>
 
    <p><h3>This is the maximum stabilization realistically possible without putting oneself at risk.</h3></p>
-<br>
-<p><span class="time">12:08</span></p>
-<br>
+ </div>
+ </details>
+
+
+<details class="sub-entry">
+      <summary>Clarification</summary>
+ 
+   <div class="entry-content">
+    <!-- Uhrzeit -->
+    <p class="entry-meta">
+      <span class="time">12:08</span>
+    </p>
+
+ 
+      
 <p>Clarification: Which problem is unsolvable?</p>
 <br>
 <p>An external agent</p>
@@ -361,8 +547,21 @@ As I said, the man is not exactly sane. And it feels like he is getting sicker a
 <p>4. Important point (without drama, without morality)</p>
 <p>If someone is unpredictable and potentially dangerous (for whatever reason):</p>
 <p>Maintaining distance is not an emotional decision, but a safety measure.</p>
-<br>
-<p><span class="time">13:14</span></p>
+</div>
+</details>
+
+
+
+<details class="sub-entry">
+      <summary>Me, Self, I</summary>
+ 
+   <div class="entry-content">
+    <!-- Uhrzeit -->
+    <p class="entry-meta">
+      <span class="time">13:14</span>
+    </p>
+
+
 
  <img src="Bilder\MeadII.png." alt="Mead-Bild" class="large">
 <h3>Explanation</h3>
@@ -383,35 +582,85 @@ As I said, the man is not exactly sane. And it feels like he is getting sicker a
 <p>Uses the internalized perspective of society to check actions:</p>
 <p>“Does this align with my values? With social norms?”</p>
 <p>Turns Play from chaotic experimenting into conscious self-development.</p>
-   <a href="#top" class="back-to-top">↑</a>
-</div>
+ </div>
+ </details>
 
-<div class="entry">
-   <h2 class="doto-subtitle">000 - 03</h2>
-<video controls width="1000" style="display:block; margin: 0 auto;">
-  <source src="videos/stalkingdefensecodeeng (2).mp4" type="video/mp4">
-  Dein Browser unterstützt dieses Video nicht.
-</video>
-   <a href="#top" class="back-to-top">↑</a>
-</div>
 
-<div class="entry">
-   <h2 class="doto-subtitle">000 - 04</h2>
-<video controls width="1000" style="display:block; margin: 0 auto;">
-  <source src="videos/conditioningdefensalgo.mp4" type="video/mp4">
-  Dein Browser unterstützt dieses Video nicht.
-</video>
-   <a href="#top" class="back-to-top">↑</a>
-</div>
+<details class="sub-entry">
+      <summary>18:23</summary>
+ 
+   <div class="entry-content">
+    <!-- Uhrzeit -->
+    <p class="entry-meta">
+      <span class="time">18:23</span>
+    </p>
 
-<div class="entry">
-  <p><span class="time">18:03</span></p>
-<br>
+
+
 <p>Today is a good day. I have completely and emotionally detached myself from a city and its inhabitants. I no longer wish to have any closer contact with these people. In the event of a catastrophe, they have proven to be highly incompetent and untrustworthy—especially when it comes to issues such as intrafamilial stalking, violations of privacy, and the right to autonomous self-determination for women.</p>
 <br>
 <p>It is a very liberating feeling, one that makes the soul feel lighter. Good. Keep going.</p>
    <a href="#top" class="back-to-top">↑</a>
 </div>
+  <a href="#top" class="back-to-top">↑</a>
+</details>
+
+ <details id="entry-Psychohygiene defens Algorithmus-003" class="entry">
+   <summary class="doto-date">
+     Psychohygiene defens Algorithmus
+    </summary>
+ <p class="entry-meta">
+     <span class="time">15:27</span>
+   </p>
+<video controls width="1000" style="display:block; margin: 0 auto;">
+  <source src="videos/stalkingdefensecodeeng (2).mp4" type="video/mp4">
+  Dein Browser unterstützt dieses Video nicht.
+</video>
+   <a href="#top" class="back-to-top">↑</a>
+</details>
+
+  <details id="entry-Conditioning defens Algorithmus - 04" class="entry">
+   <summary class="doto-date">
+     Conditioning defens Algorithmus
+    </summary>
+ <p class="entry-meta">
+     <span class="time">12:45</span>
+   </p>
+<video controls width="1000" style="display:block; margin: 0 auto;">
+  <source src="videos/conditioningdefensalgo.mp4" type="video/mp4">
+  Dein Browser unterstützt dieses Video nicht.
+</video>
+</div>
+   <a href="#top" class="back-to-top">↑</a>
+</details>
+</details>
+
+
+ <details id="entry-2026-02-04-005" class="entry">
+  <!-- Datum als klickbarer Deckel -->
+  <summary class="doto-date">04.02.2026 – 005</summary>
+
+ <details class="sub-entry">
+      <summary>POV</summary>
+    
+  <!-- Inhalt unter dem Datum -->
+  <div class="entry-content">
+    <!-- 23:26 -->
+    <p class="entry-meta">
+      <span class="time">23:26</span>
+    </p>
+
+    
+<br>
+<p>What remains to be told is the story of how the completely disturbed, narrow-minded abstinence moralists in Hamburg-Neugraben psychologically broke my mother for nothing more than having a profoundly dysfunctional husband. I call this indirect killing. And I am certain that the main person responsible for my mother’s condition today is the entity that claims to be my father. I see this more distantly: rather as an unwanted biological relation.</p>
+ <a href="#top" class="back-to-top">↑</a>
+
+</div>
+
+</details>
+</details>
+ <a href="#top" class="back-to-top">↑</a>
+
   
 </main>
 
