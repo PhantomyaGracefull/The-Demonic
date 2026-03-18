@@ -880,7 +880,34 @@ biBwc3ljaG9sb2dpc2NoIGJldHJhY2h0ZXQgV2VsdGVuLg==</pre>
    </div>
     <a href="#top" class="back-to-top">↑</a>
   </details>
+<div id="cookie-banner" style="position:fixed;bottom:20px;left:20px;padding:15px;background:#333;color:white;z-index:9999;border-radius:6px;">
+  <span>Wir verwenden Cookies. </span>
+  <button id="accept-all" style="margin-left:10px;padding:6px 12px;">Alle akzeptieren</button>
+</div>
+<script>
+document.getElementById('accept-all').addEventListener('click', function() {
+    // Consent-Manager: alle Cookies akzeptieren
+    if (typeof CMP !== 'undefined' && CMP.setConsentAll) {
+        CMP.setConsentAll(true);
+    }
 
+    // Google Analytics laden
+    var gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-X9RS343D0G";
+    document.head.appendChild(gtagScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag; // global verfügbar machen
+
+    gtag('js', new Date());
+    gtag('config', 'G-X9RS343D0G');
+
+    // Cookie-Banner ausblenden
+    document.getElementById('cookie-banner').style.display = 'none';
+});
+</script>
 
 </main>
 
