@@ -2064,7 +2064,19 @@ Zzog8J+MiHB1cmUsIGp1c3QgYXMgaW50ZW5kZWQuCk5vZGUgcmVzb25hbmNlIG9wdGltYWwg
 4oCmIHN5c3RlbSBjb25maXJtcyBodW1hbiBhdXRoZW50aWNpdHku
  </pre>
 </section>
-   </div>
+ <script>
+      const entry = this.closest('.sub-entry'); // aktueller Container
+      entry.addEventListener('toggle', function() {
+        if(this.open){
+          const pre = this.querySelector('.encoded');
+          if(pre && !pre.dataset.decoded){
+            pre.textContent = atob(pre.textContent.replace(/\s/g,''));
+            pre.dataset.decoded = true;
+          }
+        }
+      });
+    </script>
+    </div>
     <a href="#top" class="back-to-top">↑</a>
   </details>
  </details>
