@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>CYBER OPS // NEON TERMINAL</title>
+<style>
+body {
+    background: linear-gradient(135deg, #050505 0%, #0a0a0a 50%, #050505 100%);
+    color: #00ffe0;
+    font-family: "Courier New", monospace;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- MISSION BOARD --- */
+.mission-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-height: 85vh;
+    overflow-y: auto;
+    width: 95%;
+    max-width: 1000px;
+}
+
+.mission-card {
+    background: rgba(0,0,0,0.8);
+    border: 2px solid #00ffe0;
+    color: #ff3cac;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    font-size: 0.85rem;
+}
+
+.mission-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffe0, 0 0 40px #ff3cac;
+}
+
+/* --- ZOOM TERMINAL --- */
+.mission-zoom {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    padding: 25px;
+    background: rgba(0,0,0,0.95);
+    border: 2px solid #00ffe0;
+    box-shadow: 0 0 30px #00ffe0, 0 0 50px #ff3cac;
+    z-index: 100;
+    display: none;
+}
+
+.terminal {
+    background: black;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid #00ffe0;
+    height: 120px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: black;
+    color: #00ffe0;
+    border: 1px solid #00ffe0;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00ffe0;
+    box-shadow: 0 0 10px #00ffe0;
+}
+
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: #ff3cac;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #00ffe0;
+    box-shadow: 0 0 15px #00ffe0, 0 0 25px #ff3cac;
+}
+
+.status {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#fb-link {
+    display: block;
+    margin-top: 10px;
+    color: #00ffe0;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #00ffe0;
+    padding: 8px;
+    transition: all 0.2s;
+}
+
+#fb-link:hover {
+    color: black;
+    background: #00ffe0;
+    box-shadow: 0 0 10px #00ffe0, 0 0 20px #ff3cac;
+}
+
+.glitch {
+    animation: glitch 1s infinite;
+    color: #00ffe0;
+    text-shadow: 2px 0 #ff3cac, -2px 0 #00ffe0;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 0 #ff3cac; }
+    50% { text-shadow: -2px 0 #00ffe0; }
+    100% { text-shadow: 2px 0 #ff3cac; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MISSION BOARD -->
+<div class="mission-board">
+  <div class="mission-card" 
+       data-message='[
+         "U2FtcGxlIG1lc3NhZ2UgZm9yIERhdGEgRHJvcA==",
+         "VGhpcyBpcyBhbm90aGVyIHBhcnQgd2l0aCBtb3JlIHRleHQ="
+       ]'
+       data-code="NEON1338"
+       data-fb="https://www.facebook.com/reel/2494814424292835">
+       <span>Data Drop 01</span>
+  </div>
+
+  <div class="mission-card" 
+       data-message='["VGhpcyBpcyBhbm90aGVyIG1lc3NhZ2UgZm9yIERhdGEgRHJvcDI="]'
+       data-code="NEON1339"
+       data-fb="https://www.facebook.com/profile.php?id=100003067088820">
+       <span>Data Drop 02</span>
+  </div>
+</div>
+
+<!-- ZOOM TERMINAL -->
+<div class="mission-zoom" id="mission-zoom">
+  <h2 class="glitch">Transmission Data</h2>
+  <div class="terminal" id="mission-output"></div>
+  <input type="text" id="codeInput" placeholder="Enter Access Code">
+  <a href="#" target="_blank" id="fb-link">💻 GET ACCESS CODE ON FACEBOOK</a>
+  <button id="decodeBtn">DECRYPT</button>
+  <button id="closeBtn">BACK</button>
+  <p id="status" class="status"></p>
+</div>
+
+<script>
+const missionCards = document.querySelectorAll('.mission-card');
+const zoomTerminal = document.getElementById('mission-zoom');
+const missionOutput = document.getElementById('mission-output');
+const fbLink = document.getElementById('fb-link');
+const codeInput = document.getElementById('codeInput');
+const decodeBtn = document.getElementById('decodeBtn');
+const closeBtn = document.getElementById('closeBtn');
+const status = document.getElementById('status');
+
+missionCards.forEach(card => {
+    card.addEventListener('click', () => {
+        zoomTerminal.style.display = 'block';
+        missionOutput.textContent = '';
+        codeInput.value = '';
+        status.textContent = '';
+
+        const parts = JSON.parse(card.dataset.message);
+        const message = parts.join('');
+        const fb = card.dataset.fb;
+        const code = card.dataset.code;
+
+        fbLink.href = fb;
+
+        decodeBtn.onclick = () => {
+            if(codeInput.value === code){
+                const decoded = atob(message);
+                missionOutput.textContent = decoded;
+                status.textContent = "ACCESS GRANTED";
+                status.style.color = "#00ffe0";
+            } else {
+                missionOutput.textContent = '';
+                status.textContent = "ACCESS DENIED";
+                status.style.color = "#ff3cac";
+            }
+        };
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    zoomTerminal.style.display = 'none';
+});
+</script>
+
+</body>
+</html>
