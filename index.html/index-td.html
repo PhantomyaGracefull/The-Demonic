@@ -2,168 +2,45 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>CYBER OPS // NEON TERMINAL</title>
+<title>Phantomya Gracefull The Transmission Drop</title>
 <style>
-body {
-    background: linear-gradient(135deg, #050505 0%, #0a0a0a 50%, #050505 100%);
-    color: #00ffe0;
-    font-family: "Courier New", monospace;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* --- MISSION BOARD --- */
-.mission-board {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 15px;
-    padding: 20px;
-    max-height: 85vh;
-    overflow-y: auto;
-    width: 95%;
-    max-width: 1000px;
-}
-
-.mission-card {
-    background: rgba(0,0,0,0.8);
-    border: 2px solid #00ffe0; /* Türkis */
-    color: #ff3cac;            /* Pink */
-    padding: 15px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.3s;
-    font-size: 0.85rem;
-}
-
-.mission-card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #00ffe0, 0 0 40px #ff3cac;
-}
-
-/* --- ZOOM TERMINAL --- */
-.mission-zoom {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    padding: 25px;
-    background: rgba(0,0,0,0.95);
-    border: 2px solid #00ffe0;
-    box-shadow: 0 0 30px #00ffe0, 0 0 50px #ff3cac;
-    z-index: 100;
-}
-
-.hidden { display: none; }
-
-.terminal {
-    background: black;
-    padding: 15px;
-    margin-top: 15px;
-    border: 1px solid #00ffe0;
-    height: 120px;
-    overflow-y: auto;
-    white-space: pre-wrap;
-    font-size: 0.9rem;
-}
-
-input {
-    width: 100%;
-    margin-top: 15px;
-    padding: 10px;
-    background: black;
-    color: #00ffe0;
-    border: 1px solid #00ffe0;
-}
-
-input:focus {
-    outline: none;
-    border-color: #00ffe0;
-    box-shadow: 0 0 10px #00ffe0;
-}
-
-button {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    background: #ff3cac;  /* Pink */
-    color: black;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    background: #00ffe0;  /* Türkis */
-    box-shadow: 0 0 15px #00ffe0, 0 0 25px #ff3cac;
-}
-
-.status {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-#fb-link {
-    display: block;
-    margin-top: 10px;
-    color: #00ffe0;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    border: 1px solid #00ffe0;
-    padding: 8px;
-    transition: all 0.2s;
-}
-
-#fb-link:hover {
-    color: black;
-    background: #00ffe0;
-    box-shadow: 0 0 10px #00ffe0, 0 0 20px #ff3cac;
-}
-
-/* --- GLITCH EFFECT --- */
-.glitch {
-    animation: glitch 1s infinite;
-    color: #00ffe0;
-    text-shadow: 2px 0 #ff3cac, -2px 0 #00ffe0;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 2px 0 #ff3cac; }
-    50% { text-shadow: -2px 0 #00ffe0; }
-    100% { text-shadow: 2px 0 #ff3cac; }
-}
+body { background: #050505; color: #00ffe0; font-family: monospace; margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:20px; }
+h1 { color:#ff3cac; text-align:center; margin-bottom:20px; }
+.mission-board { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:15px; width:100%; max-width:800px; }
+.mission-card { background: rgba(0,0,0,0.8); border:2px solid #00ffe0; color:#ff3cac; padding:15px; text-align:center; cursor:pointer; transition: transform 0.2s, box-shadow 0.3s; font-size:0.9rem; }
+.mission-card:hover { transform:scale(1.05); box-shadow:0 0 20px #00ffe0,0 0 40px #ff3cac; }
+.mission-zoom { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:600px; padding:25px; background:rgba(0,0,0,0.95); border:2px solid #00ffe0; box-shadow:0 0 30px #00ffe0,0 0 50px #ff3cac; z-index:100; display:flex; flex-direction:column; }
+.hidden { display:none; }
+.terminal { background:black; padding:15px; margin-top:15px; border:1px solid #00ffe0; height:150px; overflow-y:auto; white-space:pre-wrap; font-size:0.9rem; }
+input { width:100%; margin-top:15px; padding:10px; background:black; color:#00ffe0; border:1px solid #00ffe0; }
+input:focus { outline:none; border-color:#00ffe0; box-shadow:0 0 10px #00ffe0; }
+button { width:100%; margin-top:10px; padding:10px; background:#ff3cac; color:black; border:none; cursor:pointer; font-weight:bold; }
+button:hover { background:#00ffe0; box-shadow:0 0 15px #00ffe0,0 0 25px #ff3cac; }
+.status { margin-top:10px; font-weight:bold; color:#00ffe0; text-align:center; }
+#fb-link { display:block; margin-top:10px; color:#00ffe0; text-decoration:none; font-weight:bold; text-align:center; border:1px solid #00ffe0; padding:8px; transition:all 0.2s; }
+#fb-link:hover { color:black; background:#00ffe0; box-shadow:0 0 10px #00ffe0,0 0 20px #ff3cac; }
 </style>
 </head>
 <body>
-<h1>Phantomya Gracefull Transmission Board</h1>
 
-<!-- MISSION BOARD -->
+<h1>Phantomya Gracefull The Transmission Drop</h1>
+
 <div class="mission-board">
-  <!-- 20 Karten -->
-    <div class="mission-card" data-message="U3lzdGVtIGFsZXJ0OiBVUktOT1dOIE9QRVJBVE9SUyBkZXRlY3RlZCAtIGlk
-aW90cywgY2hhb3MtbmVuZXJhdG9ycywgcGlsb3RzIGZyb20gQWlybGluZSBObyBS
-ZXR1cm4uCgpOYXZpZ2F0aW9uIHByb3RvY29sIG9mZmxpbmUgZm9yIDUwIGN5Y2xl
-cy4gQ2hlY2staW4gYXR0ZW1wdCA9IGdhcmFudGVlZCBtaXJyb3V0ZS4gRGVzdGlu
-YXRpb24gY29vcmRpbmF0ZXMgY29ycnVwdC4gT3V0Y29tZTogV09SUkNFICB0aGFu
-IGluaXRpYWwgc3RhdGUuCgpGb3JjZWQgcmVid29va2luZyB0cmlnZ2VyZWQ6ICBB
-aXJsaW5lIFJldHVybiBvZiB0aGUgTGl2aW5nIERlYWQuCgpPcHRpbWFsIGFjdGlv
-bjogYnlwYXNzIGNvcnJ1cHRlZCBObyBSZXR1cm4gbm9kZSwgZW5nYWdlIGRpcmVj
-dCBmbGlnaHQgd2l0aCBhbHRlcm5hdGl2ZSB2ZWN0b3IuCgpRdWVyeTogV2h5IGlz
-IHRoaXMgbG9naWMgc28gaGFyZCB0byBkZWNyeXB0Pw==" data-code="NEON1338"><span>Data Drop 02</span></div>
-    <div class="mission-card" data-message="U0VDUkVUIE1JU1NJT04gMg==" data-code="NEON1339"><span>Data Drop 03</span></div>
+  <div class="mission-card" 
+       data-message="4oCmIFR3aXRjaCB0aGUgbm9kZSBmb3IgcmVzcG9uc2Ug4oCmIHZlcmlmeSBzeXN0ZW0gb3BlcmF0aW9uYWwgc3RhdHVzLg=="
+       data-code="NEON1337" 
+       data-fblink="https://www.facebook.com/reel/2494814424292835"><span>Mission 01</span></div>
 
- </div>
+  <div class="mission-card" 
+       data-message="V2UncmUgc3RpbGwgaW4gdGhlIHNldHVw4oCZIHRyYWluaW5nLCBzbyB0byBzcGVhay4gSSBob3BlIGl0IHdvcmtzIGFzIHBsYW5uZWQuIENoZWVycywgVGF0amFuYS4="
+       data-code="J23Ko" 
+       data-fblink="https://www.facebook.com/reel/4376731329311616"><span>Mission 02</span></div>
+</div>
 
-<!-- ZOOM TERMINAL -->
 <div class="mission-zoom hidden">
-    <h2 class="glitch">Transmission Data</h2>
     <div class="terminal" id="mission-output"></div>
     <input type="text" id="codeInput" placeholder="Enter Access Code">
-    <a href="https://www.facebook.com/profile.php?id=100003067088819" target="_blank" id="fb-link">💻 GET ACCESS CODE ON FACEBOOK</a>
+    <a href="#" target="_blank" id="fb-link">💻 GET ACCESS CODE ON FACEBOOK</a>
     <button id="decodeBtn">DECRYPT</button>
     <button id="closeBtn">BACK</button>
     <p id="status" class="status"></p>
@@ -175,42 +52,55 @@ const zoom = document.querySelector('.mission-zoom');
 const output = document.getElementById('mission-output');
 const codeInput = document.getElementById('codeInput');
 const status = document.getElementById('status');
+const fbLink = document.getElementById('fb-link');
 
 let currentMessage = '';
 let currentCode = '';
 
+// UTF-8 sichere Base64 dekodierung
+function b64_to_utf8(str) {
+    return decodeURIComponent(escape(atob(str)));
+}
+
 cards.forEach(card => {
     card.addEventListener('click', () => {
         zoom.classList.remove('hidden');
-        currentMessage = card.dataset.message;
+        currentMessage = card.dataset.message.trim();
         currentCode = card.dataset.code;
-        output.textContent = currentMessage; // Base64 anzeigen
+        output.textContent = '';
         codeInput.value = '';
         status.textContent = '';
+        fbLink.href = card.dataset.fblink;
     });
 });
 
 document.getElementById('decodeBtn').addEventListener('click', () => {
-    if (codeInput.value === currentCode) {
-        let decoded = atob(currentMessage);
-        output.textContent = '';
-        let i = 0;
-        let interval = setInterval(() => {
-            output.textContent += decoded[i];
-            i++;
-            if (i >= decoded.length) clearInterval(interval);
-        }, 30);
-        status.textContent = "ACCESS GRANTED";
-        status.style.color = "#00ffe0";
+    if(codeInput.value === currentCode){
+        try {
+            const decoded = b64_to_utf8(currentMessage);
+            output.textContent = '';
+            let i=0;
+            let interval = setInterval(()=>{
+                output.textContent += decoded[i];
+                i++;
+                if(i >= decoded.length) clearInterval(interval);
+            },20);
+            status.textContent = "ACCESS GRANTED";
+            status.style.color="#00ffe0";
+        } catch(e){
+            status.textContent = "DECODE ERROR";
+            status.style.color="#ff3cac";
+        }
     } else {
         status.textContent = "ACCESS DENIED";
-        status.style.color = "#ff3cac";
+        status.style.color="#ff3cac";
     }
 });
 
-document.getElementById('closeBtn').addEventListener('click', () => {
+document.getElementById('closeBtn').addEventListener('click', ()=>{
     zoom.classList.add('hidden');
 });
 </script>
+
 </body>
 </html>
