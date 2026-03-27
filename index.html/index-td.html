@@ -28,6 +28,13 @@ button:hover { background:#00ffe0; box-shadow:0 0 15px #00ffe0,0 0 25px #ff3cac;
 #fb-link { display:block; margin-top:10px; color:#00ffe0; text-decoration:none; font-weight:bold; text-align:center; border:1px solid #00ffe0; padding:8px; transition:all 0.2s; }
 #fb-link:hover { color:black; background:#00ffe0; box-shadow:0 0 10px #00ffe0,0 0 20px #ff3cac; }
 video { margin-top:15px; }
+
+.card-clicks {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.7rem;
+    color: #00ffe0;
+}
 </style>
 </head>
 <body>
@@ -154,6 +161,41 @@ document.getElementById('decodeBtn').addEventListener('click', () => {
 // CLOSE Button
 document.getElementById('closeBtn').addEventListener('click', ()=>{
     zoom.classList.add('hidden');
+});
+
+cards.forEach(card => {
+    card.clickCount = 0; // initialisieren
+
+    // Element für die Klickanzeige erstellen
+    let clickDisplay = document.createElement('span');
+    clickDisplay.className = 'card-clicks';
+    clickDisplay.textContent = "Klicks: 0";
+    card.appendChild(clickDisplay);
+
+    card.addEventListener('click', () => {
+        // Klick zählen
+        card.clickCount++;
+        clickDisplay.textContent = "Klicks: " + card.clickCount;
+
+        // Dein bestehender Zoom-Handler
+        zoom.classList.remove('hidden');
+        output.textContent = '';
+        codeInput.value = '';
+        status.textContent = '';
+        fbLink.href = card.dataset.fblink || '#';
+        currentMessage = card.dataset.message.trim();
+        currentCode = card.dataset.code;
+
+        if(card.dataset.video){
+            const video = document.getElementById('mission-video');
+            const source = document.getElementById('video-source');
+            source.src = card.dataset.video;
+            video.load();
+            video.classList.remove('hidden');
+        } else {
+            document.getElementById('mission-video').classList.add('hidden');
+        }
+    });
 });
 </script>
 
