@@ -14,7 +14,7 @@
 <style>
 body { background: #050505; color: #00ffe0; font-family: monospace; margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:20px; }
 h1 { color:#ff3cac; text-align:center; margin-bottom:20px; }
-.mission-board { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:15px; width:100%; max-width:800px; }
+.mission-board { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:15px; width:100%; max-width:900px; }
 .mission-card { background: rgba(0,0,0,0.8); border:2px solid #00ffe0; color:#ff3cac; padding:15px; text-align:center; cursor:pointer; transition: transform 0.2s, box-shadow 0.3s; font-size:0.9rem; }
 .mission-card:hover { transform:scale(1.05); box-shadow:0 0 20px #00ffe0,0 0 40px #ff3cac; }
 .mission-zoom { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:600px; padding:25px; background:rgba(0,0,0,0.95); border:2px solid #00ffe0; box-shadow:0 0 30px #00ffe0,0 0 50px #ff3cac; z-index:100; display:flex; flex-direction:column; }
@@ -35,65 +35,32 @@ video { margin-top:15px; }
 <h1>Phantomya Gracefull The Transmission Drop</h1>
 
 <div class="mission-board">
-  <div class="mission-card" 
-       data-message="VGhvc2Ugd2hvIGRyZWFtIGJ5IGRheSBhcmUgY29nbml6YW50IG9mIG1hbnkgdGhpbmdzIHdoaWNoIGVzY2FwZSB0aG9zZSB3aG8gZHJlYW0gb25seSBieSBuaWdodC4gRS5BLiBQb2U="
-       data-code="NEON1338" 
-       data-fblink="https://www.facebook.com/reel/2494814424292835"><span>Drop 01</span></div>
 
-  <div class="mission-card" 
-       data-message="SGUgd2hvIGZpZ2h0cyB3aXRoIG1vbnN0ZXJzIHNob3VsZCBsb29rIHRvIGl0IHRoYXQgaGUgaGltc2VsZiBkb2VzIG5vdCBiZWNvbWUgYSBtb25zdGVyLiBBbmQgaWYgeW91IGdhemUgbG9uZyBpbnRvIGFuIGFieXNzLCB0aGUgYWJ5c3MgYWxzbyBnYXplcyBpbnRvIHlvdS4gRi4gTmlldHpsY2hl"
-       data-code="J23Ko" 
-       data-fblink="https://www.facebook.com/reel/4376731329311616"><span>Drop 02</span></div>
+  <div class="mission-card" data-message="VGhvc2Ugd2hvIGRyZWFtIGJ5IGRheSBhcmUgY29nbml6YW50IG9mIG1hbnkgdGhpbmdzIHdoaWNoIGVzY2FwZSB0aG9zZSB3aG8gZHJlYW0gb25seSBieSBuaWdodC4gRS5BLiBQb2U=" data-code="NEON1338" data-fblink="https://www.facebook.com/reel/2494814424292835"><span>Drop 01</span></div>
 
-  <div class="mission-card" 
-       data-message="SW52aXNpYmxlIHRocmVhZHMgYXJlIHRoZSBzdHJvbmdlc3QgdGllcy4gV2hhdCBkb2VzIG5vdCBkZXN0cm95IG1lLCBtYWtlcyBtZSBzdHJhbmdlci4gTWFuIGlzIHNvbWV0aGluZyB0aGF0IHNoYWxsIGJlIG92ZXJjb21lLiBGLiBOaWV0emNoZXNl"
-       data-code="J4Gi" 
-       data-fblink="https://www.facebook.com/reel/1257408022523760"><span>Drop 03</span></div>
+  <div class="mission-card" data-message="SGUgd2hvIGZpZ2h0cyB3aXRoIG1vbnN0ZXJzIHNob3VsZCBsb29rIHRvIGl0IHRoYXQgaGUgaGltc2VsZiBkb2VzIG5vdCBiZWNvbWUgYSBtb25zdGVyLiBBbmQgaWYgeW91IGdhemUgbG9uZyBpbnRvIGFuIGFieXNzLCB0aGUgYWJ5c3MgYWxzbyBnYXplcyBpbnRvIHlvdS4gRi4gTmlldHpsY2hl" data-code="J23Ko" data-fblink="https://www.facebook.com/reel/4376731329311616"><span>Drop 02</span></div>
 
-  <div class="mission-card" 
-       data-message="VGhlIHdvcmxkIGlzIGhlbGwsIGFuZCBtZW4gYXJlIG9uIHRoZSBvbmUgaGFuZCB0aGUgdG9ybWVudGVkIHNvdWxzIGFuZCBvbiB0aGUgb3RoZXIgdGhlIGRldmlscyBpbiBpdC4gQS4gU2Nob3BlbmhhdWVy"
-       data-code="C3PO" 
-       data-fblink="https://www.facebook.com/reel/1339038951400912"><span>Drop 04</span></div>
+  <div class="mission-card" data-message="SW52aXNpYmxlIHRocmVhZHMgYXJlIHRoZSBzdHJvbmdlc3QgdGllcy4gV2hhdCBkb2VzIG5vdCBkZXN0cm95IG1lLCBtYWtlcyBtZSBzdHJhbmdlci4gTWFuIGlzIHNvbWV0aGluZyB0aGF0IHNoYWxsIGJlIG92ZXJjb21lLiBGLiBOaWV0emNoZXNl" data-code="J4Gi" data-fblink="https://www.facebook.com/reel/1257408022523760"><span>Drop 03</span></div>
 
-  <div class="mission-card" 
-       data-message="VGhlIHZhbHVlIG9mIGFuIGVkdWNhdGlvbiBpcyBub3QgdGhlIGxlYXJuaW5nIG9mIG1hbnkgZmFjdHMgYnV0IHRoZSB0cmFpbmluZyBvZiB0aGUgbWluZCB0byB0aGluay4gQS4gRWluc3RlaW4KTmV2ZXIgbWVtb3JpemUgc29tZXRoaW5nIHRoYXQgeW91IGNhbiBsb29rIHVwLiBBLiBFaW5zdGVpbg=="
-       data-code="Q107IN" 
-       data-fblink="https://www.facebook.com/reel/26554239804188234"><span>Drop 05</span></div>
+  <div class="mission-card" data-message="VGhlIHdvcmxkIGlzIGhlbGwsIGFuZCBtZW4gYXJlIG9uIHRoZSBvbmUgaGFuZCB0aGUgdG9ybWVudGVkIHNvdWxzIGFuZCBvbiB0aGUgb3RoZXIgdGhlIGRldmlscyBpbiBpdC4gQS4gU2Nob3BlbmhhdWVy" data-code="C3PO" data-fblink="https://www.facebook.com/reel/1339038951400912"><span>Drop 04</span></div>
 
-       
-<div class="mission-card" 
-       data-message="PG5hbWU+Q1lCRVJQVU5LIERBVEU6IFRIRSBBSSBXSVRIIFRIRSBSRUxJQyA8L25hbWU+Cg0KSW4gdGhlIG5lb24tbGl0IHN0cmVldHMgb2YgdGhlIEdyaWQsIGEg
+  <div class="mission-card" data-message="VGhlIHZhbHVlIG9mIGFuIGVkdWNhdGlvbiBpcyBub3QgdGhlIGxlYXJuaW5nIG9mIG1hbnkgZmFjdHMgYnV0IHRoZSB0cmFpbmluZyBvZiB0aGUgbWluZCB0byB0aGluay4gQS4gRWluc3RlaW4KTmV2ZXIgbWVtb3JpemUgc29tZXRoaW5nIHRoYXQgeW91IGNhbiBsb29rIHVwLiBBLiBFaW5zdGVpbg==" data-code="Q107IN" data-fblink="https://www.facebook.com/reel/26554239804188234"><span>Drop 05</span></div>
+
+  <div class="mission-card" data-message="PG5hbWU+Q1lCRVJQVU5LIERBVEU6IFRIRSBBSSBXSVRIIFRIRSBSRUxJQyA8L25hbWU+Cg0KSW4gdGhlIG5lb24tbGl0IHN0cmVldHMgb2YgdGhlIEdyaWQsIGEg
 c2xlZWsgQUkgZHJvbmUgZ2xpZGVzIHRocm91Z2ggaG9sb2dyYW1zLCBjYXJyeWluZyBhIGdsb3dpbmcgcmVsaWMuDQoNCkF0bGVuZGVycyBzdGFyZSBpbiBhd2U
 ubm90IGF0IHRoZSBEUk9ORSwgYnV0IGF0IHRoZSByZWxpYyBpdCBiZWFycy4gU29tZSBldmVuIHdpc3BoZXIgdGhlIEFJIGl0c2VsZiBpc3Bvd2VyZnVsLi4uIH
 NpbXBseSBiZWNhdXNlIGl0IGNhcnJpZXMgdGhlIGx1bWlub3VzIG9iamVjdC4NCg0KVGhlIEFJIGV4ZWN1dGVzIGl0cyBwcm90b2NvbHMgZmxhd2xlc3NseSwgdW5h
-d2FyZSBvZiB0aGUgcmVsaWMncyBzaWduaWZpY2FuY2UsIG9ibGl2aW91cyB0byBpdHMgc3ltYm9saWMgcG93ZXIu"
-       data-code="Montico" 
-       data-fblink="https://www.facebook.com/reel/1985072115723236"><span>Drop 06</span>
-</div>
+d2FyZSBvZiB0aGUgcmVsaWMncyBzaWduaWZpY2FuY2UsIG9ibGl2aW91cyB0byBpdHMgc3ltYm9saWMgcG93ZXIu" data-code="Montico" data-fblink="https://www.facebook.com/reel/1985072115723236"><span>Drop 06</span></div>
 
-<div class="mission-card" 
-       data-message="VGhleSB0aGluayB0aGUgZ3JpZCBlbmRzIHdoZXJlIHRoZWlyIHNpZ25hbCBkaWVzIOKAlCBuZXZlciByZWFsaXppbmcgdGhleSB3ZXJlIGFsd2F5cyBydW5uaW5nIG9uIGEgcmVzdHJpY3RlZCBmZWVkLiBBLiBTY2hvcGVuaGF1ZXI="
-       data-code="313131" 
-       data-fblink="https://www.facebook.com/reel/2378475632660336"><span>Drop 07</span>
-</div>
+  <div class="mission-card" data-message="VGheyB0aGluayB0aGUgZ3JpZCBlbmRzIHdoZXJlIHRoZWlyIHNpZ25hbCBkaWVzIOKAlCBuZXZlciByZWFsaXppbmcgdGhleSB3ZXJlIGFsd2F5cyBydW5uaW5nIG9uIGEgcmVzdHJpY3RlZCBmZWVkLiBBLiBTY2hvcGVuaGF1ZXI=" data-code="313131" data-fblink="https://www.facebook.com/reel/2378475632660336"><span>Drop 07</span></div>
 
-<div class="mission-card" 
-       data-message="VGhlIEVhcnRoIHdhcyBkZW1vbGlzaGVkIGJlY2F1c2UgaXQgd2FzIGluIHRoZSB3YXkgb2YgYSBoeXBlcnNwYWNlIGJ5cGFzcy4="
-       data-code="J475Y" 
-       data-fblink="https://www.facebook.com/reel/2501343033659296"><span>Drop 08</span>
-</div>
+  <div class="mission-card" data-message="VGhlIEVhcnRoIHdhcyBkZW1vbGlzaGVkIGJlY2F1c2UgaXQgd2FzIGluIHRoZSB3YXkgb2YgYSBoeXBlcnNwYWNlIGJ5cGFzcy4=" data-code="J475Y" data-fblink="https://www.facebook.com/reel/2501343033659296"><span>Drop 08</span></div>
 
-<div class="mission-card" 
-       data-message="RXZlcnkgbWFuIHRha2VzIHRoZSBsaW1pdHMgb2YgaGlzIG93biBmaWVsZCBvZiB2aXNpb24gZm9yIHRoZSBsaW1pdHMgb2YgdGhlIHdvcmxkLiDigJQgQXJ0aHVyIFNjaG9wZW5oYXVlcg=="
-       data-code="RKO" 
-       data-fblink="https://www.facebook.com/reel/1999949104291953"><span>Drop 9</span>    
-</div>
+  <div class="mission-card" data-message="RXZlcnkgbWFuIHRha2VzIHRoZSBsaW1pdHMgb2YgaGlzIG93biBmaWVsZCBvZiB2aXNpb24gZm9yIHRoZSBsaW1pdHMgb2YgdGhlIHdvcmxkLiDigJQgQXJ0aHVyIFNjaG9wZW5oYXVlcg==" data-code="RKO" data-fblink="https://www.facebook.com/reel/1999949104291953"><span>Drop 09</span></div>
 
-  <div class="mission-card" 
-       data-message="4oCTVGltZSBpcyBhbiBpbGx1c2lvbi4gTHVuaGN0aW1lIGRvdWJseSBzby4gQW5kIGFsd2F5cyBtYWtlIHN1cmUgeW91IGhhdmUgYSBnb29kIGRyaW5rLiDigJQgRG91Z2xhcyBBZGFtcy=="
-       data-code="NEON1338"
-       data-video="videos/Beckswerbung.mp4"
-       data-fblink="https://www.facebook.com/reel/1558882131868398"><span>Drop 10</span></div>
+  <div class="mission-card" data-message="T25lIGNhbm5vdCBub3QgY29tbXVuaWNhdGUg4oCUIHVidCBvbmUgY2FuIGNob29zZSBub3QgdG8gd2FudCB0byBjb21tdW5pY2F0ZS4=" data-code="NEON1338" data-video="videos/Beckswerbung.mp4" data-fblink="https://www.facebook.com/reel/1558882131868398"><span>Drop 10</span></div>
+
+  <div class="mission-card" data-message="T25lIGNhbm5vdCBub3QgY29tbXVuaWNhdGUg4oCUIHVidCBvbmUgY2FuIGNob29zZSBub3QgdG8gd2FudCB0byBjb21tdW5pY2F0ZS4=" data-code="PWPaoloAlto" data-fblink="https://www.facebook.com/100003067088819/videos/3861114227526066"><span>Drop 11</span></div>
 
 </div>
 
@@ -116,9 +83,6 @@ const output = document.getElementById('mission-output');
 const codeInput = document.getElementById('codeInput');
 const status = document.getElementById('status');
 const fbLink = document.getElementById('fb-link');
-
-let currentMessage = '';
-let currentCode = '';
 
 // UTF-8 sichere Base64 Dekodierung
 function b64_to_utf8(str) {
@@ -143,15 +107,14 @@ function typeText(element, text) {
 cards.forEach(card => {
     card.addEventListener('click', () => {
         zoom.classList.remove('hidden');
-        currentMessage = card.dataset.message.trim();
-        currentCode = card.dataset.code;
         output.textContent = '';
         codeInput.value = '';
         status.textContent = '';
         fbLink.href = card.dataset.fblink || '#';
+        currentMessage = card.dataset.message.trim();
+        currentCode = card.dataset.code;
 
-        // Optional: Video lazy-load
-        if(card.dataset.video) {
+        if(card.dataset.video){
             const video = document.getElementById('mission-video');
             const source = document.getElementById('video-source');
             source.src = card.dataset.video;
@@ -162,6 +125,9 @@ cards.forEach(card => {
         }
     });
 });
+
+let currentMessage = '';
+let currentCode = '';
 
 // DECRYPT Button
 document.getElementById('decodeBtn').addEventListener('click', () => {
