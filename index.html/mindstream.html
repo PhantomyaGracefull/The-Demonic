@@ -298,6 +298,121 @@ button:hover {
         height: 27%;
     }
 }
+/* =========================================
+   TABLET UND SMARTPHONE
+   Direkt vor </style> einfügen
+   ========================================= */
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+    body {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: clamp(1.35rem, 4vw, 2rem);
+        margin: 18px 0;
+    }
+
+    .access-box {
+        width: min(560px, 92vw);
+        margin: 22px auto;
+        padding: 22px;
+    }
+
+    .toolbar {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+    }
+
+    .toolbar button {
+        padding: 8px 10px;
+        font-size: 0.78rem;
+    }
+}
+
+/* Smartphone hochkant */
+
+@media (max-width: 760px) and (orientation: portrait) {
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+        line-height: 1.25;
+    }
+
+    .access-box {
+        width: 100%;
+        margin: 16px auto;
+        padding: 18px;
+        box-shadow: 0 0 18px rgba(0, 255, 224, 0.75);
+    }
+
+    input,
+    button {
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    #mindstream {
+        background-size: auto 100%;
+        background-position: center;
+    }
+
+    #leftScreen,
+    #rightScreen {
+        display: none;
+    }
+
+    /*
+       Position des Hauptbildschirms passend zum
+       mittig zugeschnittenen Hintergrundbild
+    */
+
+    #mainScreen {
+        left: calc(50vw - 22.6vh);
+        top: 11.5vh;
+        width: 46.1vh;
+        height: 25.7vh;
+    }
+
+    .toolbar {
+        align-items: flex-start;
+    }
+
+    .toolbar button {
+        width: auto;
+        max-width: 48%;
+        min-height: 40px;
+        padding: 7px 9px;
+        font-size: 0.68rem;
+        line-height: 1.15;
+    }
+}
+
+/* Smartphone quer */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    #mindstream {
+        background-size: cover;
+        background-position: center;
+    }
+
+    #leftScreen,
+    #rightScreen {
+        display: block;
+    }
+
+    .toolbar button {
+        min-height: 36px;
+        padding: 6px 9px;
+        font-size: 0.66rem;
+    }
+}
 </style>
 </head>
 
