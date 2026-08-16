@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Phantomya Gracefull – Mindstream</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+    background: #050505;
+    color: #00ffe0;
+    font-family: Consolas, monospace;
+}
+
+h1 {
+    color: #ff3cac;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Zugang */
+
+.access-box {
+    width: min(600px, 100%);
+    margin: 30px auto;
+    padding: 25px;
+    border: 2px solid #00ffe0;
+    background: #050505;
+    box-shadow: 0 0 30px #00ffe0;
+}
+
+input,
+button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+input {
+    color: #00ffe0;
+    background: #000;
+    border: 1px solid #00ffe0;
+}
+
+button {
+    color: #000;
+    background: #ff3cac;
+    border: 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00ffe0;
+}
+
+#enterMindstream {
+    background: #00ffe0;
+}
+
+#status {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Mindstream-Raum */
+
+#mindstream {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.03),
+            rgba(0, 0, 0, 0.2)
+        ),
+        url("./Bilder/mindstream-room.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+}
+
+/* Scanlines */
+
+#mindstream::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.035) 0,
+        rgba(255, 255, 255, 0.035) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+}
+
+/* Raumflackern */
+
+#mindstream.flicker::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 29;
+    pointer-events: none;
+
+    background: rgba(0, 255, 224, 0.06);
+    animation: roomFlicker 6.7s steps(1, end) infinite;
+}
+
+/* Bedienelemente */
+
+.toolbar {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.toolbar button {
+    width: auto;
+    margin: 0;
+    padding: 9px 12px;
+
+    color: #00ffe0;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid #00ffe0;
+}
+
+/* Bildschirme */
+
+.screen {
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+
+    background: #000;
+    border: 2px solid rgba(0, 255, 224, 0.45);
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 224, 0.3),
+        inset 0 0 20px rgba(0, 255, 224, 0.12);
+}
+
+/* Exakte Positionen im Hintergrundbild */
+
+#leftScreen {
+    left: 19.2%;
+    top: 13.8%;
+    width: 13.2%;
+    height: 17.2%;
+
+    transform: rotate(0.8deg);
+}
+
+#mainScreen {
+    left: 37.3%;
+    top: 11.5%;
+    width: 25.9%;
+    height: 25.7%;
+}
+
+#rightScreen {
+    left: 68.1%;
+    top: 14.1%;
+    width: 13.3%;
+    height: 17.1%;
+
+    transform: rotate(-0.8deg);
+}
+
+.screen iframe {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+    background: #000;
+
+    filter:
+        grayscale(1)
+        contrast(1.2)
+        brightness(0.72);
+
+    opacity: 0.9;
+}
+
+.screen-glitch {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+
+    background: linear-gradient(
+        90deg,
+        rgba(255, 60, 172, 0.2),
+        transparent 25%,
+        transparent 75%,
+        rgba(0, 255, 224, 0.2)
+    );
+
+    animation: screenFlicker 5.5s steps(1, end) infinite;
+}
+
+/* Seitenmonitore anklickbar machen */
+
+.switch-screen {
+    position: absolute;
+    inset: 0;
+    z-index: 25;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    color: transparent;
+    background: transparent;
+    border: 0;
+}
+
+/* Flackeranimationen */
+
+@keyframes roomFlicker {
+    0%, 9%, 11%, 42%, 44%, 79%, 81%, 100% {
+        opacity: 0.8;
+    }
+
+    10%, 43%, 80% {
+        opacity: 0.05;
+    }
+
+    10.4%, 43.4% {
+        opacity: 1;
+    }
+}
+
+@keyframes screenFlicker {
+    0%, 18%, 20%, 62%, 64%, 100% {
+        opacity: 0.08;
+        transform: translateX(0);
+    }
+
+    19% {
+        opacity: 0.65;
+        transform: translateX(-2%);
+    }
+
+    63% {
+        opacity: 0.5;
+        transform: translateX(2%);
+    }
+}
+
+/* Handy */
+
+@media (max-width: 760px) {
+    #mindstream {
+        background-size: auto 100%;
+        background-position: center;
+    }
+
+    #leftScreen,
+    #rightScreen {
+        display: none;
+    }
+
+    #mainScreen {
+        left: 25%;
+        top: 12%;
+        width: 50%;
+        height: 27%;
+    }
+}
+/* =========================================
+   TABLET UND SMARTPHONE
+   Direkt vor </style> einfügen
+   ========================================= */
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+    body {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: clamp(1.35rem, 4vw, 2rem);
+        margin: 18px 0;
+    }
+
+    .access-box {
+        width: min(560px, 92vw);
+        margin: 22px auto;
+        padding: 22px;
+    }
+
+    .toolbar {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+    }
+
+    .toolbar button {
+        padding: 8px 10px;
+        font-size: 0.78rem;
+    }
+}
+
+/* Smartphone hochkant */
+
+@media (max-width: 760px) and (orientation: portrait) {
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+        line-height: 1.25;
+    }
+
+    .access-box {
+        width: 100%;
+        margin: 16px auto;
+        padding: 18px;
+        box-shadow: 0 0 18px rgba(0, 255, 224, 0.75);
+    }
+
+    input,
+    button {
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    #mindstream {
+        background-size: auto 100%;
+        background-position: center;
+    }
+
+    #leftScreen,
+    #rightScreen {
+        display: none;
+    }
+
+    /*
+       Position des Hauptbildschirms passend zum
+       mittig zugeschnittenen Hintergrundbild
+    */
+
+    #mainScreen {
+        left: calc(50vw - 22.6vh);
+        top: 11.5vh;
+        width: 46.1vh;
+        height: 25.7vh;
+    }
+
+    .toolbar {
+        align-items: flex-start;
+    }
+
+    .toolbar button {
+        width: auto;
+        max-width: 48%;
+        min-height: 40px;
+        padding: 7px 9px;
+        font-size: 0.68rem;
+        line-height: 1.15;
+    }
+}
+
+/* Smartphone quer */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    #mindstream {
+        background-size: cover;
+        background-position: center;
+    }
+
+    #leftScreen,
+    #rightScreen {
+        display: block;
+    }
+
+    .toolbar button {
+        min-height: 36px;
+        padding: 6px 9px;
+        font-size: 0.66rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Phantomya Gracefull – Mindstream</h1>
+
+<div class="access-box">
+    <p>DROP 02 // ENTER ACCESS CODE</p>
+
+    <input
+        id="codeInput"
+        type="text"
+        placeholder="Enter Access Code"
+    >
+
+    <button id="decryptButton">
+        DECRYPT
+    </button>
+
+    <p id="status"></p>
+
+    <button id="enterMindstream" class="hidden">
+        ENTER MINDSTREAM
+    </button>
+</div>
+
+<section id="mindstream" class="hidden flicker">
+
+    <div class="toolbar">
+        <button id="flickerButton">
+            SIGNAL INSTABILITY: ON
+        </button>
+
+        <button id="leaveButton">
+            LEAVE MINDSTREAM
+        </button>
+    </div>
+
+    <!-- LINKER BILDSCHIRM -->
+
+    <div class="screen" id="leftScreen">
+        <iframe
+            id="leftPlayer"
+            title="Facebook-Beitrag links"
+            allow="encrypted-media; fullscreen"
+            allowfullscreen
+        ></iframe>
+
+        <div class="screen-glitch"></div>
+
+        <button
+            class="switch-screen"
+            data-screen="left"
+            title="Auf Hauptbildschirm anzeigen"
+        >
+            Wechseln
+        </button>
+    </div>
+
+    <!-- HAUPTBILDSCHIRM -->
+
+    <div class="screen" id="mainScreen">
+        <iframe
+            id="mainPlayer"
+            title="Facebook-Hauptbeitrag"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+            allowfullscreen
+        ></iframe>
+
+        <div class="screen-glitch"></div>
+    </div>
+
+    <!-- RECHTER BILDSCHIRM -->
+
+    <div class="screen" id="rightScreen">
+        <iframe
+            id="rightPlayer"
+            title="Facebook-Beitrag rechts"
+            allow="encrypted-media; fullscreen"
+            allowfullscreen
+        ></iframe>
+
+        <div class="screen-glitch"></div>
+
+        <button
+            class="switch-screen"
+            data-screen="right"
+            title="Auf Hauptbildschirm anzeigen"
+        >
+            Wechseln
+        </button>
+    </div>
+
+</section>
+
+<script>
+const ACCESS_CODE = "4U9525";
+
+/* Deine drei Facebook-Links */
+
+let links = {
+    left:
+        "https://www.facebook.com/reel/1809023703111797",
+
+    main:
+        "https://www.facebook.com/photo/?fbid=1481728967325169&set=a.633529515478456",
+
+    right:
+        "https://www.facebook.com/reel/1035969792734203"
+};
+
+/* Elemente */
+
+const codeInput =
+    document.getElementById("codeInput");
+
+const decryptButton =
+    document.getElementById("decryptButton");
+
+const enterButton =
+    document.getElementById("enterMindstream");
+
+const status =
+    document.getElementById("status");
+
+const mindstream =
+    document.getElementById("mindstream");
+
+const leftPlayer =
+    document.getElementById("leftPlayer");
+
+const mainPlayer =
+    document.getElementById("mainPlayer");
+
+const rightPlayer =
+    document.getElementById("rightPlayer");
+
+/* Facebook-Einbettungsadresse erzeugen */
+
+function createFacebookEmbed(url, autoplay) {
+    const isVideo =
+        url.includes("/reel/") ||
+        url.includes("/videos/") ||
+        url.includes("/watch");
+
+    const plugin =
+        isVideo ? "video.php" : "post.php";
+
+    return (
+        "https://www.facebook.com/plugins/" +
+        plugin +
+        "?href=" +
+        encodeURIComponent(url) +
+        "&show_text=false" +
+        "&width=960" +
+        "&autoplay=" +
+        (autoplay ? "true" : "false")
+    );
+}
+
+/* Bildschirme laden */
+
+function loadScreens() {
+    leftPlayer.src =
+        createFacebookEmbed(links.left, false);
+
+    mainPlayer.src =
+        createFacebookEmbed(links.main, true);
+
+    rightPlayer.src =
+        createFacebookEmbed(links.right, false);
+}
+
+/* Zugang prüfen */
+
+decryptButton.addEventListener(
+    "click",
+    function () {
+        if (
+            codeInput.value.trim() ===
+            ACCESS_CODE
+        ) {
+            status.textContent =
+                "ACCESS GRANTED";
+
+            status.style.color =
+                "#00ffe0";
+
+            enterButton.classList.remove(
+                "hidden"
+            );
+        } else {
+            status.textContent =
+                "ACCESS DENIED";
+
+            status.style.color =
+                "#ff3cac";
+
+            enterButton.classList.add(
+                "hidden"
+            );
+        }
+    }
+);
+
+/* Mindstream betreten */
+
+enterButton.addEventListener(
+    "click",
+    function () {
+        loadScreens();
+
+        mindstream.classList.remove(
+            "hidden"
+        );
+    }
+);
+
+/* Mindstream verlassen */
+
+document
+    .getElementById("leaveButton")
+    .addEventListener(
+        "click",
+        function () {
+            mindstream.classList.add(
+                "hidden"
+            );
+
+            leftPlayer.src = "";
+            mainPlayer.src = "";
+            rightPlayer.src = "";
+        }
+    );
+
+/* Flackern ein- und ausschalten */
+
+document
+    .getElementById("flickerButton")
+    .addEventListener(
+        "click",
+        function (event) {
+            const active =
+                mindstream.classList.toggle(
+                    "flicker"
+                );
+
+            event.currentTarget.textContent =
+                "SIGNAL INSTABILITY: " +
+                (active ? "ON" : "OFF");
+        }
+    );
+
+/* Seitenbildschirm mit Hauptbildschirm tauschen */
+
+document
+    .querySelectorAll(".switch-screen")
+    .forEach(function (button) {
+        button.addEventListener(
+            "click",
+            function () {
+                const side =
+                    button.dataset.screen;
+
+                const oldMain =
+                    links.main;
+
+                links.main =
+                    links[side];
+
+                links[side] =
+                    oldMain;
+
+                loadScreens();
+            }
+        );
+    });
+
+/* Enter-Taste beim Zugangscode */
+
+codeInput.addEventListener(
+    "keydown",
+    function (event) {
+        if (event.key === "Enter") {
+            decryptButton.click();
+        }
+    }
+);
+</script>
+
+</body>
+</html>
