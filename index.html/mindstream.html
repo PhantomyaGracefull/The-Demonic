@@ -46,7 +46,6 @@ h1 {
     display: none !important;
 }
 
-
 /* =========================================
    DROP-ZUGANG
    ========================================= */
@@ -102,7 +101,6 @@ button:hover {
     font-weight: bold;
 }
 
-
 /* =========================================
    MINDSTREAM
    ========================================= */
@@ -115,16 +113,6 @@ button:hover {
     overflow: hidden;
     background: #000;
 }
-
-
-/*
-   Hintergrundbild und Monitore liegen
-   auf derselben 16:9-Fläche.
-
-   Dadurch bleiben die Facebook-Inhalte
-   auf Computer, Tablet und Smartphone
-   in den Monitorrahmen.
-*/
 
 .room-stage {
     position: absolute;
@@ -149,11 +137,6 @@ button:hover {
     background-repeat: no-repeat;
 }
 
-
-/* =========================================
-   SCANLINES
-   ========================================= */
-
 #mindstream::before {
     content: "";
 
@@ -173,11 +156,6 @@ button:hover {
         );
 }
 
-
-/* =========================================
-   RAUMFLACKERN
-   ========================================= */
-
 #mindstream.flicker::after {
     content: "";
 
@@ -187,27 +165,17 @@ button:hover {
 
     pointer-events: none;
 
-    background:
-        rgba(0, 255, 224, 0.06);
+    background: rgba(0, 255, 224, 0.06);
 
-    animation:
-        roomFlicker 6.7s steps(1, end) infinite;
+    animation: roomFlicker 6.7s steps(1, end) infinite;
 }
-
-
-/* =========================================
-   BEDIENELEMENTE
-   ========================================= */
 
 .toolbar {
     position: absolute;
-
     top: 12px;
     left: 12px;
     right: 12px;
-
     z-index: 100;
-
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -217,102 +185,64 @@ button:hover {
     width: auto;
     margin: 0;
     padding: 9px 12px;
-
     color: #00ffe0;
     background: rgba(0, 0, 0, 0.85);
-
     border: 1px solid #00ffe0;
 }
-
-
-/* =========================================
-   BILDSCHIRME
-   ========================================= */
 
 .screen {
     position: absolute;
     z-index: 10;
-
     overflow: hidden;
-
     background: #000;
-
-    border:
-        2px solid rgba(0, 255, 224, 0.45);
-
+    border: 2px solid rgba(0, 255, 224, 0.45);
     box-shadow:
         0 0 15px rgba(0, 255, 224, 0.30),
         inset 0 0 20px rgba(0, 255, 224, 0.12);
 }
 
-
-/* Linker Monitor */
-
 #leftScreen {
     left: 19.2%;
     top: 12.5%;
-
     width: 13.2%;
     height: 17.2%;
-
     transform: rotate(0.8deg);
 }
-
-
-/* Hauptmonitor */
 
 #mainScreen {
     left: 37.3%;
     top: 11.5%;
-
     width: 25.9%;
     height: 25.7%;
 }
 
-
-/* Rechter Monitor */
-
 #rightScreen {
     left: 68.1%;
     top: 12.8%;
-
     width: 13.3%;
     height: 17.1%;
-
     transform: rotate(-0.8deg);
 }
-
-
-/* Facebook-Inhalte */
 
 .screen iframe {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     border: 0;
     background: #000;
-
     filter:
         grayscale(1)
         contrast(1.2)
         brightness(0.72);
-
     opacity: 0.90;
 }
-
-
-/* Bildschirmstörung */
 
 .screen-glitch {
     position: absolute;
     inset: 0;
     z-index: 20;
-
     pointer-events: none;
-
     background:
         linear-gradient(
             90deg,
@@ -321,194 +251,108 @@ button:hover {
             transparent 75%,
             rgba(0, 255, 224, 0.20)
         );
-
-    animation:
-        screenFlicker 5.5s steps(1, end) infinite;
+    animation: screenFlicker 5.5s steps(1, end) infinite;
 }
-
-
-/* Unsichtbare Schaltfläche auf Seitenmonitoren */
 
 .switch-screen {
     position: absolute;
     inset: 0;
     z-index: 25;
-
     width: 100%;
     height: 100%;
-
     margin: 0;
     padding: 0;
-
     color: transparent;
     background: transparent;
-
     border: 0;
 }
 
-
-/* =========================================
-   ANIMATIONEN
-   ========================================= */
-
 @keyframes roomFlicker {
-    0%,
-    9%,
-    11%,
-    42%,
-    44%,
-    79%,
-    81%,
-    100% {
-        opacity: 0.80;
-    }
-
-    10%,
-    43%,
-    80% {
-        opacity: 0.05;
-    }
-
-    10.4%,
-    43.4% {
-        opacity: 1;
-    }
+    0%, 9%, 11%, 42%, 44%, 79%, 81%, 100% { opacity: 0.80; }
+    10%, 43%, 80% { opacity: 0.05; }
+    10.4%, 43.4% { opacity: 1; }
 }
 
 @keyframes screenFlicker {
-    0%,
-    18%,
-    20%,
-    62%,
-    64%,
-    100% {
+    0%, 18%, 20%, 62%, 64%, 100% {
         opacity: 0.08;
         transform: translateX(0);
     }
-
     19% {
         opacity: 0.65;
         transform: translateX(-2%);
     }
-
     63% {
         opacity: 0.50;
         transform: translateX(2%);
     }
 }
 
-
-/* =========================================
-   TABLET
-   ========================================= */
-
 @media (max-width: 1024px) {
-    body {
-        padding: 16px;
-    }
-
+    body { padding: 16px; }
     h1 {
         margin: 18px 0;
-
-        font-size:
-            clamp(1.35rem, 4vw, 2rem);
+        font-size: clamp(1.35rem, 4vw, 2rem);
     }
-
     .access-box {
         width: min(560px, 92vw);
-
         margin: 22px auto;
         padding: 22px;
     }
-
     .toolbar {
         top: 10px;
         left: 10px;
         right: 10px;
     }
-
     .toolbar button {
         padding: 8px 10px;
         font-size: 0.78rem;
     }
 }
 
-
-/* =========================================
-   SMARTPHONE HOCHKANT
-   ========================================= */
-
 @media (max-width: 760px) and (orientation: portrait) {
-    body {
-        padding: 12px;
-    }
-
+    body { padding: 12px; }
     h1 {
         margin: 16px 0;
-
         font-size: 1.25rem;
         line-height: 1.25;
     }
-
     .access-box {
         width: 100%;
-
         margin: 16px auto;
         padding: 18px;
-
-        box-shadow:
-            0 0 18px rgba(0, 255, 224, 0.75);
+        box-shadow: 0 0 18px rgba(0, 255, 224, 0.75);
     }
-
     input,
     button {
         min-height: 48px;
         font-size: 16px;
     }
-
-    /*
-       Im Hochformat werden die beiden seitlichen
-       Monitore ausgeblendet. Der Hauptmonitor bleibt
-       exakt im Hintergrundrahmen.
-    */
-
     #leftScreen,
     #rightScreen {
         display: none;
     }
-
     .toolbar {
         align-items: flex-start;
     }
-
     .toolbar button {
         width: auto;
         max-width: 48%;
         min-height: 40px;
-
         padding: 7px 9px;
-
         font-size: 0.68rem;
         line-height: 1.15;
     }
 }
-
-
-/* =========================================
-   SMARTPHONE QUERFORMAT
-   ========================================= */
 
 @media (max-height: 600px) and (orientation: landscape) {
     #leftScreen,
     #rightScreen {
         display: block;
     }
-
     .toolbar button {
         min-height: 36px;
-
         padding: 6px 9px;
-
         font-size: 0.66rem;
     }
 }
@@ -520,218 +364,68 @@ button:hover {
 
 <h1>Phantomya Gracefull – Mindstream</h1>
 
-
-<!-- =====================================
-     DROP-ZUGANG
-     ===================================== -->
-
 <div class="access-box">
-
     <p>DROP // ENTER ACCESS CODE</p>
-
-    <input
-        id="codeInput"
-        type="text"
-        placeholder="Enter Access Code"
-        autocomplete="off"
-    >
-
-    <button id="decryptButton">
-        DECRYPT
-    </button>
-
+    <input id="codeInput" type="text" placeholder="Enter Access Code" autocomplete="off">
+    <button id="decryptButton">DECRYPT</button>
     <p id="status"></p>
-
-    <button
-        id="enterMindstream"
-        class="hidden"
-    >
-        ENTER MINDSTREAM
-    </button>
-
+    <button id="enterMindstream" class="hidden">ENTER MINDSTREAM</button>
 </div>
 
-
-<!-- =====================================
-     MINDSTREAM
-     ===================================== -->
-
-<section
-    id="mindstream"
-    class="hidden flicker"
->
-
+<section id="mindstream" class="hidden flicker">
     <div class="toolbar">
-
-        <button id="flickerButton">
-            SIGNAL INSTABILITY: ON
-        </button>
-
-        <button id="leaveButton">
-            LEAVE MINDSTREAM
-        </button>
-
+        <button id="flickerButton">SIGNAL INSTABILITY: ON</button>
+        <button id="leaveButton">LEAVE MINDSTREAM</button>
     </div>
-
-
-    <!-- Hintergrund und Monitore -->
 
     <div class="room-stage">
-
-
-        <!-- LINKER BILDSCHIRM -->
-
-        <div
-            class="screen"
-            id="leftScreen"
-        >
-
-            <iframe
-                id="leftPlayer"
-                title="Facebook-Beitrag links"
-                allow="encrypted-media; fullscreen"
-                allowfullscreen
-            ></iframe>
-
+        <div class="screen" id="leftScreen">
+            <iframe id="leftPlayer" title="Facebook-Beitrag links" allow="encrypted-media; fullscreen" allowfullscreen></iframe>
             <div class="screen-glitch"></div>
-
-            <button
-                class="switch-screen"
-                data-screen="left"
-                title="Auf Hauptbildschirm anzeigen"
-            >
-                Wechseln
-            </button>
-
+            <button class="switch-screen" data-screen="left" title="Auf Hauptbildschirm anzeigen">Wechseln</button>
         </div>
 
-
-        <!-- HAUPTBILDSCHIRM -->
-
-        <div
-            class="screen"
-            id="mainScreen"
-        >
-
-            <iframe
-                id="mainPlayer"
-                title="Facebook-Hauptbeitrag"
-                allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                allowfullscreen
-            ></iframe>
-
+        <div class="screen" id="mainScreen">
+            <iframe id="mainPlayer" title="Facebook-Hauptbeitrag" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
             <div class="screen-glitch"></div>
-
         </div>
 
-
-        <!-- RECHTER BILDSCHIRM -->
-
-        <div
-            class="screen"
-            id="rightScreen"
-        >
-
-            <iframe
-                id="rightPlayer"
-                title="Facebook-Beitrag rechts"
-                allow="encrypted-media; fullscreen"
-                allowfullscreen
-            ></iframe>
-
+        <div class="screen" id="rightScreen">
+            <iframe id="rightPlayer" title="Facebook-Beitrag rechts" allow="encrypted-media; fullscreen" allowfullscreen></iframe>
             <div class="screen-glitch"></div>
-
-            <button
-                class="switch-screen"
-                data-screen="right"
-                title="Auf Hauptbildschirm anzeigen"
-            >
-                Wechseln
-            </button>
-
+            <button class="switch-screen" data-screen="right" title="Auf Hauptbildschirm anzeigen">Wechseln</button>
         </div>
-
     </div>
-
 </section>
-
 
 <script>
 
-/* =========================================
-   VIER DROPS
-   ========================================= */
-
 const drops = {
-
-    /* DROP 01 */
-
     "4U9525": {
         name: "DROP 01",
-
-        left:
-            "https://www.facebook.com/reel/1809023703111797",
-
-        main:
-            "https://www.facebook.com/photo/?fbid=1481728967325169&set=a.633529515478456",
-
-        right:
-            "https://www.facebook.com/reel/1035969792734203"
+        left: "https://www.facebook.com/reel/1809023703111797",
+        main: "https://www.facebook.com/photo/?fbid=1481728967325169&set=a.633529515478456",
+        right: "https://www.facebook.com/reel/1035969792734203"
     },
-
-
-    /* DROP 02 */
-
     "HURTZ2026": {
         name: "DROP 02",
-
-        left:
-            "https://www.facebook.com/photo?fbid=1345851983569173&set=pcb.1345852566902448",
-
-        main:
-            "https://www.facebook.com/photo?fbid=1345851983569173&set=pcb.1345852566902448",
-
-        right:
-            "https://www.facebook.com/photo?fbid=1345851983569173&set=pcb.1345852566902448"
+        left: "https://www.facebook.com/photo?fbid=1345851983569173&set=pcb.1345852566902448",
+        main: "https://www.facebook.com/photo?fbid=1345851983569173&set=pcb.1345852566902448",
+        right: "https://www.facebook.com/photo?fbid=1345851983569173&set=pcb.1345852566902448"
     },
-
-       /* DROP 03 */
-
-
- "N3ONVOID26": {
+    "N3ONVOID26": {
         name: "DROP 03",
-
-        left:
-            "https://www.facebook.com/photo/?fbid=1892229088867398&set=a.599798814777105",
-            
-
-        main:
-            "https://www.facebook.com/photo/?fbid=1702423005225811&set=a.722035679931220",
-
-        right:
-            "https://www.facebook.com/photo/?fbid=10243869630106604&set=a.2169130558250"
+        left: "https://www.facebook.com/photo/?fbid=1892229088867398&set=a.599798814777105",
+        main: "https://www.facebook.com/photo/?fbid=1702423005225811&set=a.722035679931220",
+        right: "https://www.facebook.com/photo/?fbid=10243869630106604&set=a.2169130558250"
     },
-
-
-    /* DROP 04 — REUTERS */
-
     "R3UT3RS26": {
         name: "DROP 04 // REUTERS",
-
-        left:
-            "https://www.facebook.com/reel/1089802820387100",
-
-        main:
-            "https://www.facebook.com/reel/1480950873797228",
-
-        right:
-            "https://www.facebook.com/photo?fbid=1597209751773355&set=a.323246072503069"
+        left: "https://www.facebook.com/reel/1089802820387100",
+        main: "https://www.facebook.com/reel/1480950873797228",
+        right: "https://www.facebook.com/reel/1100703406469759"
     }
-
 };
-
-
-/* Aktuell ausgewählte Bildschirm-Inhalte */
 
 let links = {
     left: "",
@@ -739,39 +433,14 @@ let links = {
     right: ""
 };
 
-
-/* =========================================
-   ELEMENTE
-   ========================================= */
-
-const codeInput =
-    document.getElementById("codeInput");
-
-const decryptButton =
-    document.getElementById("decryptButton");
-
-const enterButton =
-    document.getElementById("enterMindstream");
-
-const status =
-    document.getElementById("status");
-
-const mindstream =
-    document.getElementById("mindstream");
-
-const leftPlayer =
-    document.getElementById("leftPlayer");
-
-const mainPlayer =
-    document.getElementById("mainPlayer");
-
-const rightPlayer =
-    document.getElementById("rightPlayer");
-
-
-/* =========================================
-   FACEBOOK-EINBETTUNG
-   ========================================= */
+const codeInput = document.getElementById("codeInput");
+const decryptButton = document.getElementById("decryptButton");
+const enterButton = document.getElementById("enterMindstream");
+const status = document.getElementById("status");
+const mindstream = document.getElementById("mindstream");
+const leftPlayer = document.getElementById("leftPlayer");
+const mainPlayer = document.getElementById("mainPlayer");
+const rightPlayer = document.getElementById("rightPlayer");
 
 function createFacebookEmbed(url, autoplay) {
     const isVideo =
@@ -779,10 +448,7 @@ function createFacebookEmbed(url, autoplay) {
         url.includes("/videos/") ||
         url.includes("/watch");
 
-    const plugin =
-        isVideo
-            ? "video.php"
-            : "post.php";
+    const plugin = isVideo ? "video.php" : "post.php";
 
     return (
         "https://www.facebook.com/plugins/" +
@@ -796,176 +462,65 @@ function createFacebookEmbed(url, autoplay) {
     );
 }
 
-
-/* =========================================
-   BILDSCHIRME LADEN
-   ========================================= */
-
 function loadScreens() {
-    leftPlayer.src =
-        createFacebookEmbed(
-            links.left,
-            false
-        );
-
-    mainPlayer.src =
-        createFacebookEmbed(
-            links.main,
-            true
-        );
-
-    rightPlayer.src =
-        createFacebookEmbed(
-            links.right,
-            false
-        );
+    leftPlayer.src = createFacebookEmbed(links.left, false);
+    mainPlayer.src = createFacebookEmbed(links.main, true);
+    rightPlayer.src = createFacebookEmbed(links.right, false);
 }
 
+decryptButton.addEventListener("click", function () {
+    const enteredCode = codeInput.value.trim().toUpperCase();
+    const selectedDrop = drops[enteredCode];
 
-/* =========================================
-   ZUGANG PRÜFEN
-   ========================================= */
+    if (selectedDrop) {
+        links = {
+            left: selectedDrop.left,
+            main: selectedDrop.main,
+            right: selectedDrop.right
+        };
 
-decryptButton.addEventListener(
-    "click",
-    function () {
-        const enteredCode =
-            codeInput.value
-                .trim()
-                .toUpperCase();
-
-        const selectedDrop =
-            drops[enteredCode];
-
-        if (selectedDrop) {
-            links = {
-                left: selectedDrop.left,
-                main: selectedDrop.main,
-                right: selectedDrop.right
-            };
-
-            status.textContent =
-                selectedDrop.name +
-                " // ACCESS GRANTED";
-
-            status.style.color =
-                "#00ffe0";
-
-            enterButton.classList.remove(
-                "hidden"
-            );
-        } else {
-            status.textContent =
-                "ACCESS DENIED";
-
-            status.style.color =
-                "#ff3cac";
-
-            enterButton.classList.add(
-                "hidden"
-            );
-        }
+        status.textContent = selectedDrop.name + " // ACCESS GRANTED";
+        status.style.color = "#00ffe0";
+        enterButton.classList.remove("hidden");
+    } else {
+        status.textContent = "ACCESS DENIED";
+        status.style.color = "#ff3cac";
+        enterButton.classList.add("hidden");
     }
-);
+});
 
+enterButton.addEventListener("click", function () {
+    loadScreens();
+    mindstream.classList.remove("hidden");
+});
 
-/* =========================================
-   MINDSTREAM BETRETEN
-   ========================================= */
+document.getElementById("leaveButton").addEventListener("click", function () {
+    mindstream.classList.add("hidden");
+    leftPlayer.src = "";
+    mainPlayer.src = "";
+    rightPlayer.src = "";
+});
 
-enterButton.addEventListener(
-    "click",
-    function () {
+document.getElementById("flickerButton").addEventListener("click", function (event) {
+    const active = mindstream.classList.toggle("flicker");
+    event.currentTarget.textContent = "SIGNAL INSTABILITY: " + (active ? "ON" : "OFF");
+});
+
+document.querySelectorAll(".switch-screen").forEach(function (button) {
+    button.addEventListener("click", function () {
+        const side = button.dataset.screen;
+        const oldMain = links.main;
+        links.main = links[side];
+        links[side] = oldMain;
         loadScreens();
-
-        mindstream.classList.remove(
-            "hidden"
-        );
-    }
-);
-
-
-/* =========================================
-   MINDSTREAM VERLASSEN
-   ========================================= */
-
-document
-    .getElementById("leaveButton")
-    .addEventListener(
-        "click",
-        function () {
-            mindstream.classList.add(
-                "hidden"
-            );
-
-            leftPlayer.src = "";
-            mainPlayer.src = "";
-            rightPlayer.src = "";
-        }
-    );
-
-
-/* =========================================
-   FLACKERN EIN/AUS
-   ========================================= */
-
-document
-    .getElementById("flickerButton")
-    .addEventListener(
-        "click",
-        function (event) {
-            const active =
-                mindstream.classList.toggle(
-                    "flicker"
-                );
-
-            event.currentTarget.textContent =
-                "SIGNAL INSTABILITY: " +
-                (active ? "ON" : "OFF");
-        }
-    );
-
-
-/* =========================================
-   SEITENMONITOR TAUSCHEN
-   ========================================= */
-
-document
-    .querySelectorAll(".switch-screen")
-    .forEach(function (button) {
-        button.addEventListener(
-            "click",
-            function () {
-                const side =
-                    button.dataset.screen;
-
-                const oldMain =
-                    links.main;
-
-                links.main =
-                    links[side];
-
-                links[side] =
-                    oldMain;
-
-                loadScreens();
-            }
-        );
     });
+});
 
-
-/* =========================================
-   ENTER-TASTE
-   ========================================= */
-
-codeInput.addEventListener(
-    "keydown",
-    function (event) {
-        if (event.key === "Enter") {
-            decryptButton.click();
-        }
+codeInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        decryptButton.click();
     }
-);
+});
 
 </script>
 
