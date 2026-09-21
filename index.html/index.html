@@ -1,23 +1,21 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="Erfahren Sie alles über die Phantomtochter: Definition, mein Fall, Hintergründe und informative Beispiele auf einen Blick.">
- <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Erfahren Sie alles über die Phantomtochter: Definition, mein Fall, Hintergründe und informative Beispiele auf einen Blick.">
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9RS343D0G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9RS343D0G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-X9RS343D0G');
+  </script>
+  <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/02c440bbe2566.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
 
-  gtag('config', 'G-X9RS343D0G');
-</script>
-<script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/02c440bbe2566.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
-
-
-    /* --- Schriftart einbinden --- */
+  <style>
     @font-face {
       font-family: 'Doto';
       src: url('fonts/Doto.ttf') format('truetype');
@@ -25,13 +23,12 @@
       font-style: normal;
     }
 
-    /* --- Allgemeines Layout --- */
     body {
-      font-family: Arial, sans-serif; /* normale Schrift für Rest der Seite */
+      font-family: Arial, sans-serif;
       line-height: 1.6;
       margin: 20px;
-      background-color: #FFFFF; /* Mitternachtsblau */
-      color: #e0e0e0; /* heller Text für Kontrast */
+      background-color: #ffffff;
+      color: #1f1f1f;
     }
 
     header, footer {
@@ -40,10 +37,15 @@
       padding-bottom: 10px;
     }
 
+    nav {
+      text-align: center;
+      margin-top: 12px;
+    }
+
     nav a {
-      color: #66ccff;
+      color: #005f8f;
       text-decoration: none;
-      margin-right: 10px;
+      margin: 0 8px;
     }
 
     nav a:hover {
@@ -62,7 +64,6 @@
       padding-top: 10px;
     }
 
-    /* --- Doto nur für bestimmte Überschriften --- */
     .doto-title {
       font-family: 'Doto', Arial, sans-serif;
       font-size: 3em;
@@ -73,155 +74,141 @@
       font-family: 'Doto', Arial, sans-serif;
       font-size: 2em;
       color: #ccccff;
-      text-align: center; /* Text zentrieren*/	
+      text-align: center;
     }
-/* Header zentrieren */
-.header-container {
-  display: flex;
-  flex-direction: column; /* Überschrift oben, Bild darunter */
-  align-items: center; /* horizontale Zentrierung */
-  text-align: center; /* Text zentrieren */
-  margin-bottom: 20px;
-}
 
-.header-image {
-  width: 250px; /* Größe des Bildes */
-  height: auto;
-  margin-top: 10px; /* Abstand zwischen Überschrift und Bild */
-  border-radius: 10px; /* optional */
-}
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-/* Tagebuch-Einträge als Boxen */
-.entry {
-  background-color: #1c1c3a; /* dunkles Blau für Kontrast zum Haupt-Hintergrund */
-  border: 2px solid #66ccff; /* sichtbare Linie als Grenze */
-  border-radius: 10px; /* leicht abgerundet */
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* optionaler Schatten für Tiefe */
-  text-align: center; /* Text zentrieren */
+    .header-image {
+      width: 250px;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
 
-}
+    .entry {
+      background-color: #1c1c3a;
+      color: #e0e0e0;
+      border: 2px solid #66ccff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      text-align: center;
+    }
 
-/* Standardgröße für alle Bilder in Tagebuch-Boxen */
-.entry img {
-  width: 200px;      /* Standardbreite */
-  height: auto;      /* proportional skalieren */
-  border-radius: 10px;
-  display: block;
-  margin: 10px auto; /* zentriert */
-}
+    .entry img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      margin: 10px auto;
+    }
 
-/* Optional: für einzelne Bilder eine andere Größe */
-.entry img.large {
-  width: 700px;      /* größere Variante */
-}
-.entry img.small {
-  width: 250px;      /* kleinere Variante */
-}
+    .entry img.large {
+      width: 700px;
+    }
 
-.lang-switch {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 6px 12px;
-  border: 1px solid #aaa;
-  text-decoration: none;
-  color: white;
-  border-radius: 6px;
-  font-weight: 600;
-}
+    .entry img.small {
+      width: 250px;
+    }
 
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 6px 12px;
+      border: 1px solid #aaa;
+      text-decoration: none;
+      color: white;
+      border-radius: 6px;
+      font-weight: 600;
+    }
 
+    .time {
+      font-family: 'Doto', sans-serif;
+      font-weight: normal;
+      font-size: 2em;
+      color: #aaa;
+    }
 
-.time {
-  font-family: 'Doto', sans-serif;
-  font-weight: normal; /* optional */
-  font-size: 2em;
-  color: #aaa; /* wie du magst */
-}
+    .entry-nav {
+      background-color: #2a2a2a;
+      padding: 10px;
+      text-align: center;
+      font-family: 'Doto', Arial, sans-serif;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
 
-.entry-nav {
-  background-color: #2a2a2a;
-  padding: 10px;
-  text-align: center;
-  font-family: 'Doto', Arial, sans-serif;
-  margin-bottom: 20px;
-  border-radius: 6px;
-}
+    .entry-nav a {
+      color: #f5f5f5;
+      text-decoration: none;
+      margin: 0 8px;
+    }
 
-.entry-nav a {
-  color: #f5f5f5;
-  text-decoration: none;
-  margin: 0 8px;
-}
+    .entry-nav a:hover {
+      text-decoration: underline;
+    }
 
-.entry-nav a:hover {
-  text-decoration: underline;
-}
+    header h4 {
+      color: black;
+      font-family: 'Doto', sans-serif;
+    }
 
-header h4 {
-  color: black;
-  font-family: 'Doto', sans-serif;
+    .terminal {
+      background: #000;
+      color: #00ff88;
+      font-family: "Courier New", monospace;
+      padding: 1.5rem;
+      border: 1px solid #00ff88;
+    }
 
-}
+    .terminal pre {
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
 
-.terminal {
-  background: #000;
-  color: #00ff88;
-  font-family: "Courier New", monospace;
-  padding: 1.5rem;
-  border: 1px solid #00ff88;
-}
-
-.terminal pre {
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
- </style>
+    .back-to-top {
+      color: #66ccff;
+    }
+  </style>
 </head>
-<body>
-
-
+<body id="top">
   <header>
-   <div class="header-container">
+    <div class="header-container">
       <h1 class="doto-title">Phantomya Gracefull</h1>
       <h2 class="doto-title">Geräusche der Manipulation</h2>
-      <h4 class="doto.title">Eine autobiographische Übersetzung in einen Cyber Punk Blog, einer manipulativen Kindheitserziehung.</h4>
-
-      <img src="Bilder\Phantomia.png.png" alt="Phantomya Gracefull" class="header-image">
+      <h4>Eine autobiographische Übersetzung in einen Cyber Punk Blog, einer manipulativen Kindheitserziehung.</h4>
+      <img src="Bilder/Phantomia.png.png" alt="Phantomya Gracefull" class="header-image">
     </div>
+
+    <nav aria-label="Seitennavigation">
+      <a href="index-en.html">EN</a>
+      <a href="index-td.html">Transmission Drops</a>
     </nav>
-    <a href="index-en.html">EN</a>
-    <a href="index-td.html">Transmission Drops</a>
-
-
   </header>
 
-
-
- <main>
-  <!-- Div jetzt verstecken -->
-
- <div class="entry">
-    <h2 class="doto-subtitle">000 – 00 </h2>
-    <h2>Die Phantomtochter</h2>
-    <p>Eine Phantomtochter ist nicht real. Sie existiert in der Vorstellung ihres Vaters.</p>
-    <p>Ihre eigenen Gedanken stören.</p>
-    <p>Ihre Grenzen verletzen.</p>
-    <p>Inre Autonomie ist Verrat.</p>
-<p></p>
-    <p>Das ist keine Liebe, das ist psychische Kontrolle.</p>
-    <p>Was verschwindet, wenn du Projektionsfläche bist?</p>
-    <img src="Bilder\PhantomyaIII.png" alt="Platzhalter-Bild" class="small">
-     <a href="#top" class="back-to-top">↑</a>          
-  </div>
-
-
-
-
-</main>
+  <main>
+    <div class="entry">
+      <h2 class="doto-subtitle">000 – 00</h2>
+      <h2>Die Phantomtochter</h2>
+      <p>Eine Phantomtochter ist nicht real. Sie existiert in der Vorstellung ihres Vaters.</p>
+      <p>Ihre eigenen Gedanken stören.</p>
+      <p>Ihre Grenzen verletzen.</p>
+      <p>Inre Autonomie ist Verrat.</p>
+      <p>Das ist keine Liebe, das ist psychische Kontrolle.</p>
+      <p>Was verschwindet, wenn du Projektionsfläche bist?</p>
+      <img src="Bilder/PhantomyaIII.png" alt="Platzhalter-Bild" class="small">
+      <a href="#top" class="back-to-top" aria-label="Nach oben">↑</a>
+    </div>
+  </main>
 
   <footer>
     <p>&copy; 2026 Phantomya Gracefull</p>
