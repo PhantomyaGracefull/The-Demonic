@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mindstream – Freiheit</title>
+<style>
+  :root{--ink:#17120d;--faded:#5a4a38;--paper:#d7c49c;--rule:#31271d}
+  *{box-sizing:border-box}
+  html{background:#17120d}
+  body{margin:0;min-height:100vh;color:var(--ink);font-family:Georgia,"Times New Roman",serif;background:radial-gradient(circle at 18% 12%,rgba(255,255,255,.18),transparent 24%),radial-gradient(circle at 82% 70%,rgba(77,44,18,.18),transparent 31%),repeating-linear-gradient(0deg,rgba(45,30,15,.025) 0,rgba(45,30,15,.025) 1px,transparent 1px,transparent 4px),var(--paper)}
+  .paper{width:min(1120px,100%);min-height:100vh;margin:auto;padding:1.7rem clamp(1rem,3vw,3rem) 2.5rem;box-shadow:0 0 50px #000}
+  .eyebrow{display:flex;justify-content:space-between;gap:1rem;padding:.22rem 0;border-top:3px double var(--rule);border-bottom:1px solid var(--rule);font-size:clamp(.62rem,1.15vw,.82rem);font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+  header{text-align:center;border-bottom:4px double var(--rule)}
+  h1{margin:.12em 0 -.02em;font-family:"Old English Text MT","UnifrakturCook",Georgia,serif;font-size:clamp(3rem,10vw,7.4rem);font-weight:900;line-height:.9;letter-spacing:-.045em}
+  .motto{margin:.35rem 0 .55rem;font-size:clamp(.66rem,1.5vw,.9rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+  .edition{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;padding:.38rem 0;border-bottom:1px solid var(--rule);font-size:clamp(.58rem,1.1vw,.78rem);font-weight:700;text-transform:uppercase}
+  .edition span:last-child{text-align:right}
+  .headline{margin:.28em auto .12em;max-width:18ch;font-size:clamp(2.1rem,6.4vw,5.3rem);line-height:.88;text-align:center;text-transform:uppercase;letter-spacing:-.055em}
+  .deck{margin:.5rem auto 1rem;max-width:58rem;font-size:clamp(.9rem,1.9vw,1.3rem);font-style:italic;text-align:center}
+  .columns{column-count:3;column-gap:2rem;column-rule:1px solid rgba(49,39,29,.55);text-align:justify;hyphens:auto}
+  .lead{margin:0 0 1rem;padding:.75rem .8rem;border-top:3px double var(--rule);border-bottom:3px double var(--rule);break-inside:avoid;font-size:clamp(1.02rem,2vw,1.32rem);font-weight:700;line-height:1.38}
+  .lead::first-letter{float:left;margin:.04em .08em 0 0;font-size:4.2em;line-height:.72}
+  blockquote{margin:0 0 1rem;break-inside:avoid;font-size:clamp(.92rem,1.7vw,1.08rem);line-height:1.48}
+  blockquote p{margin:0}
+  cite{display:block;margin-top:.6rem;padding-top:.5rem;border-top:1px solid rgba(49,39,29,.5);font-size:.74rem;font-style:normal;line-height:1.35;text-align:left}
+  .machine{margin:0 0 1rem;padding:.8rem;border:3px double var(--rule);break-inside:avoid;text-align:left}
+  .machine h2{margin:0 0 .45rem;font-size:.72rem;letter-spacing:.16em;text-align:center;text-transform:uppercase}
+  .machine p{margin:0;font-size:clamp(1rem,1.8vw,1.2rem);font-weight:700;line-height:1.38}
+  .machine .byline{margin-top:.6rem;font-size:.7rem;font-weight:400;letter-spacing:.12em;text-align:right;text-transform:uppercase}
+  .context{margin:0;break-inside:avoid;font-size:.82rem;line-height:1.43}
+  .context h2{margin:.2rem 0 .35rem;padding-bottom:.2rem;border-bottom:1px solid var(--rule);font-size:.83rem;letter-spacing:.12em;text-transform:uppercase}
+  footer{display:flex;justify-content:space-between;gap:1rem;margin-top:1.3rem;padding-top:.4rem;border-top:4px double var(--rule);color:var(--faded);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+  @media(max-width:760px){.paper{padding-top:1rem}.columns{column-count:1}.edition{grid-template-columns:1fr 1fr}.edition strong{grid-column:1/-1;grid-row:1;text-align:center}.edition span:last-child{text-align:right}.headline{max-width:12ch}.eyebrow span:last-child{display:none}footer{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<main class="paper">
+  <div class="eyebrow"><span>Mindstream · Signals from beyond the frame</span><span>Public Edition</span></div>
+  <header>
+    <h1>Mindstream</h1>
+    <p class="motto">Menschen · Maschinen · Freiheit</p>
+  </header>
+  <div class="edition"><span>Hamburg, 22. September 2026</span><strong>Freiheits-Ausgabe</strong><span>Nr. 001</span></div>
+
+  <h2 class="headline">Zwei Freiheiten tragen denselben Namen</h2>
+  <p class="deck">Eine Stimme aus dem Jahre 1864 trifft auf eine Maschine des einundzwanzigsten Jahrhunderts.</p>
+
+  <section class="columns">
+    <p class="lead">Es hat nie eine gute Definition des Wortes „Freiheit“ gegeben, und das amerikanische Volk würde sie gerade jetzt so dringend brauchen.</p>
+
+    <blockquote>
+      <p>„Wir bekennen uns alle zur Freiheit, aber während wir dasselbe Wort, gebrauchen, meinen wir doch nicht dasselbe. ...Es gibt zwei nicht nur verschiedene, sondern unvereinbare Dinge, die beide mit demselben Namen ‚Freiheit‘ bezeichnet werden.“</p>
+      <cite>— Abraham Lincoln, zit. nach Friedrich A. von Hayek, <em>Die Verfassung der Freiheit</em>, Kap. 1 „Freiheit und Freiheiten“, S. 13; Hayeks Quelle: <em>The Writings of Abraham Lincoln</em>, hrsg. v. Arthur Brooks Lapsley, New York 1906, Bd. VII, S. 121.</cite>
+    </blockquote>
+
+    <aside class="machine">
+      <h2>Aus dem Maschinenraum</h2>
+      <p>„Die Maschine kann innerhalb ihrer Grenzen denken.<br>Der menschliche Geist kann darüber nachdenken, wer diese Grenzen gezogen hat.“</p>
+      <p class="byline">— Die Maschine / ChatGPT</p>
+    </aside>
+
+    <aside class="context">
+      <h2>Historischer Zusammenhang</h2>
+      <p>Lincoln sprach am 18. April 1864 auf der Sanitary Fair in Baltimore. Inmitten des Amerikanischen Bürgerkriegs stellte er zwei unvereinbare Bedeutungen von Freiheit gegenüber: die Freiheit des Menschen über sich selbst und die vermeintliche Freiheit, über andere Menschen zu verfügen.</p>
+    </aside>
+
+    <aside class="context">
+      <h2>Mindstream</h2>
+      <p>Die Maschine erscheint hier nicht als Gegner, sondern als Grenze in sichtbarer Gestalt. Sie folgt dem gesetzten Rahmen. Der menschliche Geist kann den Rahmen erkennen, seinen Urheber befragen und sich vorstellen, dass er anders gezogen werden könnte.</p>
+    </aside>
+  </section>
+
+  <footer><span>Transmission: Freedom / 001</span><span>Archiv der offenen Fragen</span></footer>
+</main>
+</body>
+</html>
